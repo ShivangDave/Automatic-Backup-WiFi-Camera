@@ -10,6 +10,7 @@
 		695C02BC20EDC8CF00E13F5A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C02BB20EDC8CF00E13F5A /* Constant.swift */; };
 		695C02BF20EDCEAA00E13F5A /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 695C02BD20EDCEAA00E13F5A /* Rubik-Regular.ttf */; };
 		695C02C020EDCEAB00E13F5A /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 695C02BE20EDCEAA00E13F5A /* Rubik-Medium.ttf */; };
+		69688FA620EDEA9D00E31EE2 /* AnimatedScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69688FA520EDEA9D00E31EE2 /* AnimatedScrollView.framework */; };
 		6981A52D20EDBBF9001F3038 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981A52C20EDBBF9001F3038 /* AppDelegate.swift */; };
 		6981A52F20EDBBF9001F3038 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981A52E20EDBBF9001F3038 /* ViewController.swift */; };
 		6981A53220EDBBF9001F3038 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6981A53020EDBBF9001F3038 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		695C02BB20EDC8CF00E13F5A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		695C02BD20EDCEAA00E13F5A /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		695C02BE20EDCEAA00E13F5A /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		69688FA520EDEA9D00E31EE2 /* AnimatedScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AnimatedScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6981A52920EDBBF9001F3038 /* Automatic Backup WiFi Camera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Automatic Backup WiFi Camera.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6981A52C20EDBBF9001F3038 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6981A52E20EDBBF9001F3038 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69688FA620EDEA9D00E31EE2 /* AnimatedScrollView.framework in Frameworks */,
 				6981A54320EDBDDA001F3038 /* NetworkExtension.framework in Frameworks */,
 				CBBF1643F6825AC393E449F1 /* Pods_Automatic_Backup_WiFi_Camera.framework in Frameworks */,
 			);
@@ -105,6 +108,7 @@
 		6981A53F20EDBDD1001F3038 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69688FA520EDEA9D00E31EE2 /* AnimatedScrollView.framework */,
 				6981A54220EDBDDA001F3038 /* NetworkExtension.framework */,
 				6952D11383FAD01C4640D2E9 /* Pods_Automatic_Backup_WiFi_Camera.framework */,
 			);
