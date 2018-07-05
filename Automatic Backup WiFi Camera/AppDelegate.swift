@@ -18,9 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
-        
-        UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
-        application.registerForRemoteNotifications()
+        if token != nil
+        {
+            print(token ?? "")
+        }
+        else
+        {
+            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
+            application.registerForRemoteNotifications()
+        }
         
         return true
     }
