@@ -443,7 +443,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
-  - AnimatedScrollView (from `https://github.com/ShivangDave/AnimatedScrollView.git`, tag `1.0.0`)
+  - AnimatedScrollView (from `https://github.com/ShivangDave/AnimatedScrollView.git`, tag `1.0.2`)
   - Crashlytics
   - Fabric
   - MaterialComponents
@@ -463,16 +463,16 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   AnimatedScrollView:
     :git: https://github.com/ShivangDave/AnimatedScrollView.git
-    :tag: 1.0.0
+    :tag: 1.0.2
 
 CHECKOUT OPTIONS:
   AnimatedScrollView:
     :git: https://github.com/ShivangDave/AnimatedScrollView.git
-    :tag: 1.0.0
+    :tag: 1.0.2
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  AnimatedScrollView: da8cd1a513a5ad90b4638c329d49b990ad3ee913
+  AnimatedScrollView: 1090ea44466c5e82ae1ad50ee6e768b6ddf2978a
   Crashlytics: 2aea305161a2122492698c75af27f2b98aa49a25
   Fabric: fba4684a95df789565b0b27fc5b6e68f1755af32
   MaterialComponents: e4edce947dba33f9c4dd14c34024602999afcbed
@@ -482,6 +482,6 @@ SPEC CHECKSUMS:
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
 
-PODFILE CHECKSUM: b683bb3e3a810e8752d21513d39884bd6f08d71a
+PODFILE CHECKSUM: d841f33e494da8f91fc1b2faba81352b460c8432
 
 COCOAPODS: 1.5.3

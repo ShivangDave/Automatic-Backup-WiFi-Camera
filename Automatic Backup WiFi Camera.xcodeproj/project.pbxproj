@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69383EE820EDF64B0087EB5F /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6981A54220EDBDDA001F3038 /* NetworkExtension.framework */; };
+		69383EF420EDF6EE0087EB5F /* Pods_Automatic_Backup_WiFi_Camera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69383EF320EDF6EE0087EB5F /* Pods_Automatic_Backup_WiFi_Camera.framework */; };
+		69383EF820EDF8110087EB5F /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69383EF720EDF8110087EB5F /* background.jpg */; };
 		695C02BC20EDC8CF00E13F5A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C02BB20EDC8CF00E13F5A /* Constant.swift */; };
 		695C02BF20EDCEAA00E13F5A /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 695C02BD20EDCEAA00E13F5A /* Rubik-Regular.ttf */; };
 		695C02C020EDCEAB00E13F5A /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 695C02BE20EDCEAA00E13F5A /* Rubik-Medium.ttf */; };
-		69688FA620EDEA9D00E31EE2 /* AnimatedScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69688FA520EDEA9D00E31EE2 /* AnimatedScrollView.framework */; };
 		6981A52D20EDBBF9001F3038 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981A52C20EDBBF9001F3038 /* AppDelegate.swift */; };
 		6981A52F20EDBBF9001F3038 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981A52E20EDBBF9001F3038 /* ViewController.swift */; };
 		6981A53220EDBBF9001F3038 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6981A53020EDBBF9001F3038 /* Main.storyboard */; };
 		6981A53420EDBBFA001F3038 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6981A53320EDBBFA001F3038 /* Assets.xcassets */; };
 		6981A53720EDBBFA001F3038 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6981A53520EDBBFA001F3038 /* LaunchScreen.storyboard */; };
-		6981A54320EDBDDA001F3038 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6981A54220EDBDDA001F3038 /* NetworkExtension.framework */; };
-		CBBF1643F6825AC393E449F1 /* Pods_Automatic_Backup_WiFi_Camera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6952D11383FAD01C4640D2E9 /* Pods_Automatic_Backup_WiFi_Camera.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2EEEEF8C277057B18771ED69 /* Pods-Automatic Backup WiFi Camera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Automatic Backup WiFi Camera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Automatic Backup WiFi Camera/Pods-Automatic Backup WiFi Camera.debug.xcconfig"; sourceTree = "<group>"; };
+		69383EF320EDF6EE0087EB5F /* Pods_Automatic_Backup_WiFi_Camera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Automatic_Backup_WiFi_Camera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69383EF720EDF8110087EB5F /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		6952D11383FAD01C4640D2E9 /* Pods_Automatic_Backup_WiFi_Camera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Automatic_Backup_WiFi_Camera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		695C02BB20EDC8CF00E13F5A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		695C02BD20EDCEAA00E13F5A /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
@@ -44,9 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69688FA620EDEA9D00E31EE2 /* AnimatedScrollView.framework in Frameworks */,
-				6981A54320EDBDDA001F3038 /* NetworkExtension.framework in Frameworks */,
-				CBBF1643F6825AC393E449F1 /* Pods_Automatic_Backup_WiFi_Camera.framework in Frameworks */,
+				69383EF420EDF6EE0087EB5F /* Pods_Automatic_Backup_WiFi_Camera.framework in Frameworks */,
+				69383EE820EDF64B0087EB5F /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +66,7 @@
 		695C02C120EDCEB300E13F5A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				69383EF720EDF8110087EB5F /* background.jpg */,
 				695C02BE20EDCEAA00E13F5A /* Rubik-Medium.ttf */,
 				695C02BD20EDCEAA00E13F5A /* Rubik-Regular.ttf */,
 			);
@@ -108,6 +110,7 @@
 		6981A53F20EDBDD1001F3038 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69383EF320EDF6EE0087EB5F /* Pods_Automatic_Backup_WiFi_Camera.framework */,
 				69688FA520EDEA9D00E31EE2 /* AnimatedScrollView.framework */,
 				6981A54220EDBDDA001F3038 /* NetworkExtension.framework */,
 				6952D11383FAD01C4640D2E9 /* Pods_Automatic_Backup_WiFi_Camera.framework */,
@@ -195,6 +198,7 @@
 				6981A53720EDBBFA001F3038 /* LaunchScreen.storyboard in Resources */,
 				695C02BF20EDCEAA00E13F5A /* Rubik-Regular.ttf in Resources */,
 				6981A53420EDBBFA001F3038 /* Assets.xcassets in Resources */,
+				69383EF820EDF8110087EB5F /* background.jpg in Resources */,
 				6981A53220EDBBF9001F3038 /* Main.storyboard in Resources */,
 				695C02C020EDCEAB00E13F5A /* Rubik-Medium.ttf in Resources */,
 			);

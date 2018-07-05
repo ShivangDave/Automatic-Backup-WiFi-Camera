@@ -11,9 +11,14 @@ import AnimatedScrollView
 
 class ViewController: UIViewController
 {
+    @IBOutlet weak var animatedScroll: AnimatedScrollView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        animatedScroll.animate(self.view, imageName: "background", animated: true)
+        
     }
 
 

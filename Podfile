@@ -9,5 +9,5 @@ target 'Automatic Backup WiFi Camera' do
   pod 'MaterialComponents'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'AnimatedScrollView', :git => 'https://github.com/ShivangDave/AnimatedScrollView.git', :tag => '1.0.0'
+  pod 'AnimatedScrollView', :git => 'https://github.com/ShivangDave/AnimatedScrollView.git', :tag => '1.0.2'
 end
