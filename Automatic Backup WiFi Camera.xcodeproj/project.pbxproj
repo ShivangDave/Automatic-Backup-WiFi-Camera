@@ -377,7 +377,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2EEEEF8C277057B18771ED69 /* Pods-Automatic Backup WiFi Camera.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
 				CODE_SIGN_ENTITLEMENTS = "Automatic Backup WiFi Camera/Automatic Backup WiFi Camera.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = DF4JEFRQHJ;
@@ -399,7 +399,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B0A3055D1D454F16182FDABD /* Pods-Automatic Backup WiFi Camera.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
 				CODE_SIGN_ENTITLEMENTS = "Automatic Backup WiFi Camera/Automatic Backup WiFi Camera.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = DF4JEFRQHJ;
