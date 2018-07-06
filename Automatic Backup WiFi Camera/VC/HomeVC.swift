@@ -12,6 +12,7 @@ import MaterialComponents.MaterialBottomNavigation
 class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
 {
     @IBOutlet weak var navBar : tabbar!
+    @IBOutlet weak var videoButton : roundButtonHome!
 
     override func viewDidLoad()
     {
@@ -22,7 +23,7 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
     
     override func viewDidAppear(_ animated: Bool)
     {
-        showTips(navBar, accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
+        showTips(videoButton, accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
     }
     
     @IBAction func cameraClicked(_ sender : Any)

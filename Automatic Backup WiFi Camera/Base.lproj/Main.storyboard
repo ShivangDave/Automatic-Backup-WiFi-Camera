@@ -184,6 +184,7 @@
                     <navigationItem key="navigationItem" id="FxN-Qz-hrv"/>
                     <connections>
                         <outlet property="navBar" destination="dXP-ok-Q6v" id="euB-Yn-Ad9"/>
+                        <outlet property="videoButton" destination="1MO-hm-Cp2" id="bru-Mi-Pkq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EpG-ai-MsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
