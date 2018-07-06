@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1FM-7W-849">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,33 +10,217 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WELCOME-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usO-tp-4Fp" customClass="AnimatedScrollView" customModule="AnimatedScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GaC-bM-nLf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p17-l3-GZi" customClass="cardView" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="40" width="335" height="523"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="42B-zC-zE4">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="356.5"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatic Backup WiFi Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtZ-YO-2du" customClass="headerLabel" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="356.5" width="335" height="59.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's get you setup." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIo-l4-9JL" customClass="middleLabel" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="416" width="335" height="71.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on the card to continue." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pty-zO-cgY" customClass="italicLabel" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="487.5" width="335" height="35.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="42B-zC-zE4" firstAttribute="leading" secondItem="p17-l3-GZi" secondAttribute="leading" id="2mu-JM-TC7"/>
+                                            <constraint firstItem="Pty-zO-cgY" firstAttribute="height" secondItem="42B-zC-zE4" secondAttribute="height" multiplier="1/10" id="3Qk-dc-Zmz"/>
+                                            <constraint firstItem="Pty-zO-cgY" firstAttribute="leading" secondItem="p17-l3-GZi" secondAttribute="leading" id="E0Y-CY-8jF"/>
+                                            <constraint firstItem="hIo-l4-9JL" firstAttribute="top" secondItem="gtZ-YO-2du" secondAttribute="bottom" id="Ekx-Bj-gze"/>
+                                            <constraint firstAttribute="trailing" secondItem="42B-zC-zE4" secondAttribute="trailing" id="JYe-a6-EPe"/>
+                                            <constraint firstItem="gtZ-YO-2du" firstAttribute="leading" secondItem="p17-l3-GZi" secondAttribute="leading" id="MtR-cJ-MRM"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pty-zO-cgY" secondAttribute="trailing" id="Mto-QN-oI5"/>
+                                            <constraint firstItem="hIo-l4-9JL" firstAttribute="height" secondItem="42B-zC-zE4" secondAttribute="height" multiplier="1/5" id="ONX-yZ-qAT"/>
+                                            <constraint firstAttribute="bottom" secondItem="Pty-zO-cgY" secondAttribute="bottom" id="OPf-yj-0iZ"/>
+                                            <constraint firstItem="gtZ-YO-2du" firstAttribute="height" secondItem="42B-zC-zE4" secondAttribute="height" multiplier="1/6" id="RIL-ub-7Ok"/>
+                                            <constraint firstItem="gtZ-YO-2du" firstAttribute="width" secondItem="42B-zC-zE4" secondAttribute="width" id="UzE-bc-3Yn"/>
+                                            <constraint firstItem="hIo-l4-9JL" firstAttribute="leading" secondItem="p17-l3-GZi" secondAttribute="leading" id="bL8-Lo-Wdx"/>
+                                            <constraint firstAttribute="trailing" secondItem="gtZ-YO-2du" secondAttribute="trailing" id="fYf-Ot-woO"/>
+                                            <constraint firstAttribute="trailing" secondItem="hIo-l4-9JL" secondAttribute="trailing" id="kF2-mA-PRQ"/>
+                                            <constraint firstItem="hIo-l4-9JL" firstAttribute="width" secondItem="42B-zC-zE4" secondAttribute="width" id="mxX-Un-WCm"/>
+                                            <constraint firstItem="Pty-zO-cgY" firstAttribute="width" secondItem="42B-zC-zE4" secondAttribute="width" id="p72-f9-Snz"/>
+                                            <constraint firstItem="gtZ-YO-2du" firstAttribute="top" secondItem="42B-zC-zE4" secondAttribute="bottom" id="qNh-fO-gQV"/>
+                                            <constraint firstItem="Pty-zO-cgY" firstAttribute="top" secondItem="hIo-l4-9JL" secondAttribute="bottom" id="qpf-QP-iWi"/>
+                                            <constraint firstItem="42B-zC-zE4" firstAttribute="top" secondItem="p17-l3-GZi" secondAttribute="top" id="vo2-IO-5Is"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQa-xj-AtY" customClass="cardView" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="40" width="335" height="523"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="yQa-xj-AtY" firstAttribute="centerX" secondItem="p17-l3-GZi" secondAttribute="centerX" id="2G2-yI-BpB"/>
+                                    <constraint firstItem="p17-l3-GZi" firstAttribute="top" secondItem="GaC-bM-nLf" secondAttribute="top" constant="40" id="IP6-BE-2xB"/>
+                                    <constraint firstAttribute="trailing" secondItem="p17-l3-GZi" secondAttribute="trailing" constant="20" id="LUn-vH-aDx"/>
+                                    <constraint firstAttribute="bottom" secondItem="p17-l3-GZi" secondAttribute="bottom" constant="40" id="Pfh-mg-BSS"/>
+                                    <constraint firstItem="p17-l3-GZi" firstAttribute="leading" secondItem="GaC-bM-nLf" secondAttribute="leading" constant="20" id="TTc-5I-giQ"/>
+                                    <constraint firstItem="yQa-xj-AtY" firstAttribute="height" secondItem="p17-l3-GZi" secondAttribute="height" id="bGJ-Y7-dIq"/>
+                                    <constraint firstItem="yQa-xj-AtY" firstAttribute="centerY" secondItem="p17-l3-GZi" secondAttribute="centerY" id="eQU-0z-qpS"/>
+                                    <constraint firstItem="yQa-xj-AtY" firstAttribute="width" secondItem="p17-l3-GZi" secondAttribute="width" id="hMO-76-hAz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GaC-bM-nLf" secondAttribute="bottom" id="3dx-Vl-VRC"/>
+                            <constraint firstItem="usO-tp-4Fp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3mB-lZ-4Cn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GaC-bM-nLf" secondAttribute="trailing" id="4o8-ke-wNx"/>
+                            <constraint firstItem="usO-tp-4Fp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BqA-qq-hU7"/>
+                            <constraint firstItem="GaC-bM-nLf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="V6f-bU-4Mr"/>
+                            <constraint firstItem="usO-tp-4Fp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WdI-Fe-CHR"/>
+                            <constraint firstItem="GaC-bM-nLf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kFb-0Y-0sl"/>
+                            <constraint firstItem="usO-tp-4Fp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nJt-pa-PCp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="WELCOME" id="iWq-pu-ghE"/>
+                    <connections>
+                        <outlet property="animatedScroll" destination="usO-tp-4Fp" id="2xo-D4-ble"/>
+                        <outlet property="cardBackView" destination="p17-l3-GZi" id="FR4-9K-hxG"/>
+                        <outlet property="cardView" destination="yQa-xj-AtY" id="wyF-5h-g9w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="608.79999999999995" y="116.49175412293854"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3Z0-8t-YtC">
+            <objects>
+                <viewController id="X1f-yQ-1aE" customClass="ViewController" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lH7-u6-XLm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSz-rB-AeK" customClass="AnimatedScrollView" customModule="AnimatedScrollView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="usO-tp-4Fp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="14N-Iy-Wcx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="usO-tp-4Fp" secondAttribute="trailing" id="GeQ-Y6-J94"/>
-                            <constraint firstItem="usO-tp-4Fp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fLp-Iq-OXg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="usO-tp-4Fp" secondAttribute="bottom" id="tLT-1Q-zuw"/>
+                            <constraint firstItem="VSz-rB-AeK" firstAttribute="leading" secondItem="b0D-bH-nuX" secondAttribute="leading" id="82J-S8-HgZ"/>
+                            <constraint firstItem="VSz-rB-AeK" firstAttribute="top" secondItem="b0D-bH-nuX" secondAttribute="top" id="A9C-2B-Yz8"/>
+                            <constraint firstItem="b0D-bH-nuX" firstAttribute="trailing" secondItem="VSz-rB-AeK" secondAttribute="trailing" id="WCR-ok-liF"/>
+                            <constraint firstItem="b0D-bH-nuX" firstAttribute="bottom" secondItem="VSz-rB-AeK" secondAttribute="bottom" id="bMR-Gd-Fa2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="b0D-bH-nuX"/>
                     </view>
                     <connections>
-                        <outlet property="animatedScroll" destination="usO-tp-4Fp" id="2xo-D4-ble"/>
+                        <outlet property="animatedScroll" destination="VSz-rB-AeK" id="5RO-jO-r0w"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="76A-0Y-l1Z" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1247" y="116"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="npm-BH-htZ">
+            <objects>
+                <viewController id="uCu-JK-9om" customClass="ViewController" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AnB-EZ-dXV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eS2-GL-Q0b" customClass="AnimatedScrollView" customModule="AnimatedScrollView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="e8K-DG-Lu8" firstAttribute="trailing" secondItem="eS2-GL-Q0b" secondAttribute="trailing" id="4uQ-c4-CG8"/>
+                            <constraint firstItem="e8K-DG-Lu8" firstAttribute="bottom" secondItem="eS2-GL-Q0b" secondAttribute="bottom" id="LbH-ET-9ld"/>
+                            <constraint firstItem="eS2-GL-Q0b" firstAttribute="leading" secondItem="e8K-DG-Lu8" secondAttribute="leading" id="dqf-Nw-mXv"/>
+                            <constraint firstItem="eS2-GL-Q0b" firstAttribute="top" secondItem="e8K-DG-Lu8" secondAttribute="top" id="jKc-wE-Job"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e8K-DG-Lu8"/>
+                    </view>
+                    <connections>
+                        <outlet property="animatedScroll" destination="eS2-GL-Q0b" id="ReE-z0-p0o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9iq-nk-wRI" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892" y="117.39130434782609"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Pm7-V2-bWo">
+            <objects>
+                <viewController id="KYn-7o-ogd" customClass="ViewController" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S4W-TK-fOe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfY-6e-Jwr" customClass="AnimatedScrollView" customModule="AnimatedScrollView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FfY-6e-Jwr" firstAttribute="leading" secondItem="L4N-rt-6d2" secondAttribute="leading" id="Col-K6-jA3"/>
+                            <constraint firstItem="L4N-rt-6d2" firstAttribute="trailing" secondItem="FfY-6e-Jwr" secondAttribute="trailing" id="WdK-Km-UCF"/>
+                            <constraint firstItem="L4N-rt-6d2" firstAttribute="bottom" secondItem="FfY-6e-Jwr" secondAttribute="bottom" id="ZVc-RH-h9R"/>
+                            <constraint firstItem="FfY-6e-Jwr" firstAttribute="top" secondItem="L4N-rt-6d2" secondAttribute="top" id="tVO-yR-Siz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L4N-rt-6d2"/>
+                    </view>
+                    <connections>
+                        <outlet property="animatedScroll" destination="FfY-6e-Jwr" id="HiO-ts-xST"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N49-4J-xmg" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2532" y="117.39130434782609"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2gW-h7-BPD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1FM-7W-849" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="IYF-ws-nJM" customClass="navBar" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AXX-Sz-0L9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dER-1m-RML" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background.jpg" width="2490" height="570"/>
+    </resources>
 </document>

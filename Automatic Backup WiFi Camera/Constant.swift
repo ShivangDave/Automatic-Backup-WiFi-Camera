@@ -13,9 +13,6 @@ import Alamofire
 
 let activityIndicator = MDCActivityIndicator()
 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-let primaryColor = UIColor(red: 228.0/255, green: 46.0/255, blue: 106.0/255, alpha: 1.0)
-let primaryFont = UIFont(name: "Rubik-Medium", size: 20.0)!
-let primaryFontAlert = UIFont(name: "Rubik-Medium", size: 12.0)!
 
 extension UIViewController
 {
@@ -33,7 +30,6 @@ extension UIViewController
         message.action = action
         MDCSnackbarManager.show(message)
     }
-    
     
     func presentIt(_ vc : String)
     {
