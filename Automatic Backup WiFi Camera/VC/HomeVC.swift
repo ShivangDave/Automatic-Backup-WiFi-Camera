@@ -21,19 +21,14 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         changeBar("HOME")
     }
     
-    enum someTip {
-        case button(UIView,UIColor,String,String)
-        case tabbar(UIView,UIColor,String,String)
-    }
-    
     override func viewDidAppear(_ animated: Bool)
     {
-        showTips(videoButton, Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
+        showTips(videoButton, navBar,Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
     }
     
     @IBAction func cameraClicked(_ sender : Any)
     {
-        showTips(sender as! roundButtonHome, Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
+        //showTips(sender as! roundButtonHome, Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
     }
     
     func bottomNavigationBar(_ bottomNavigationBar: MDCBottomNavigationBar, didSelect item: UITabBarItem)
@@ -41,14 +36,16 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         switch item.tag
         {
         case 0:
-            showTips(navBar, Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
+            //showTips(navBar, Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
+            break
             
         case 1:
-            showTips(navBar, Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
+            //showTips(navBar, Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
+            break
         case 2:
             
-            showTips(navBar, Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
-            
+            //showTips(navBar, Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
+            break
         default:
             break
         }

@@ -14,12 +14,18 @@ import Alamofire
 let activityIndicator = MDCActivityIndicator()
 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
+var flag = true
 
 extension UIViewController
 {
-    func showTips(_ view: UIView,_ color: UIColor,_ title: String,_ tip: String)
+    func showTips(_ view: UIView, _ view2: UIView,_ color: UIColor,_ title: String,_ tip: String)
     {
         let highlightController = MDCFeatureHighlightViewController(highlightedView: view) { (_) in
+            if flag
+            {
+                self.showTips(view2, view, color, title, tip)
+            }
+            flag = false
         }
         highlightController.titleColor = UIColor.white
         highlightController.bodyColor = UIColor.white
