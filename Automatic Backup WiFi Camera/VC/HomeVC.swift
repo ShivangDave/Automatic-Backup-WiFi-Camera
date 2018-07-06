@@ -21,6 +21,11 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         changeBar("HOME")
     }
     
+    enum someTip {
+        case button(UIView,UIColor,String,String)
+        case tabbar(UIView,UIColor,String,String)
+    }
+    
     override func viewDidAppear(_ animated: Bool)
     {
         showTips(videoButton, accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")

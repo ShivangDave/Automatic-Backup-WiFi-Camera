@@ -11,6 +11,7 @@ import UIKit
 import MaterialComponents.MaterialCards
 import AnimatedScrollView
 
+
 let primaryColor = UIColor(red: 59.0/255, green: 77.0/255, blue: 159.0/255, alpha: 1.0)
 let accentColor = UIColor(red: 226.0/255, green: 46.0/255, blue: 106.0/255, alpha: 1.0)
 
@@ -25,6 +26,12 @@ let primaryFontAlert = UIFont(name: "Rubik-Medium", size: 12.0)!
 let smallFont = UIFont(name: "Rubik-Regular", size: 17.0)
 let buttonFont = UIFont(name: "Rubik-Regular", size: 20.0)
 let italicFont = UIFont.italicSystemFont(ofSize: 12.0)
+
+struct Theme
+{
+    static var primaryColor: UIColor  { return UIColor(red: 59.0/255, green: 77.0/255, blue: 159.0/255, alpha: 1.0) }
+    static var accentColor: UIColor  { return UIColor(red: 226.0/255, green: 46.0/255, blue: 106.0/255, alpha: 1.0) }
+}
 
 class tabbar : MDCBottomNavigationBar
 {
