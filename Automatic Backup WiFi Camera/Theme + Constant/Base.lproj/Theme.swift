@@ -11,28 +11,6 @@ import UIKit
 import MaterialComponents.MaterialCards
 import AnimatedScrollView
 
-
-let primaryColor = UIColor(red: 59.0/255, green: 77.0/255, blue: 159.0/255, alpha: 1.0)
-let accentColor = UIColor(red: 226.0/255, green: 46.0/255, blue: 106.0/255, alpha: 1.0)
-
-//Flip
-//let accentColor = UIColor(red: 59.0/255, green: 77.0/255, blue: 159.0/255, alpha: 1.0)
-//let primaryColor = UIColor(red: 226.0/255, green: 46.0/255, blue: 106.0/255, alpha: 1.0)
-
-
-let primaryFont = UIFont(name: "Rubik-Medium", size: 20.0)!
-let primaryFontAlert = UIFont(name: "Rubik-Medium", size: 12.0)!
-
-let smallFont = UIFont(name: "Rubik-Regular", size: 17.0)
-let buttonFont = UIFont(name: "Rubik-Regular", size: 20.0)
-let italicFont = UIFont.italicSystemFont(ofSize: 12.0)
-
-struct Theme
-{
-    static var primaryColor: UIColor  { return UIColor(red: 59.0/255, green: 77.0/255, blue: 159.0/255, alpha: 1.0) }
-    static var accentColor: UIColor  { return UIColor(red: 226.0/255, green: 46.0/255, blue: 106.0/255, alpha: 1.0) }
-}
-
 class tabbar : MDCBottomNavigationBar
 {
     override init(frame: CGRect)
@@ -43,14 +21,11 @@ class tabbar : MDCBottomNavigationBar
     override func awakeFromNib()
     {
         self.titleVisibility = .never
-        self.unselectedItemTintColor = primaryColor
-        self.selectedItemTintColor = primaryColor
-        self.itemTitleFont = primaryFontAlert
+        self.unselectedItemTintColor = Theme.primaryColor
+        self.selectedItemTintColor = Theme.primaryColor
+        self.itemTitleFont = Theme.primaryFontAlert
         
-        let item1 = UITabBarItem(title: "Home", image: UIImage(named: "ic_home_24_filled"), tag: 0)
-        let item2 = UITabBarItem(title: "Settings", image: UIImage(named: "ic_settings_24_filled"), tag: 1)
-        let item3 = UITabBarItem(title: "About", image: UIImage(named: "ic_about_24_filled"), tag: 2)
-        self.items = [item1, item2, item3]
+        self.items = [tabItem.item1, tabItem.item2, tabItem.item3]
     }
     
     required init?(coder aDecoder: NSCoder)
@@ -69,7 +44,7 @@ class roundButton : MDCFloatingButton
     override func awakeFromNib()
     {
         self.tintColor = UIColor.white
-        self.setBackgroundColor(accentColor)
+        self.setBackgroundColor(Theme.accentColor)
     }
     
     required init?(coder aDecoder: NSCoder)
@@ -88,7 +63,7 @@ class roundButtonHome : MDCFloatingButton
     override func awakeFromNib()
     {
         self.tintColor = UIColor.white
-        self.setBackgroundColor(primaryColor)
+        self.setBackgroundColor(Theme.primaryColor)
     }
     
     required init?(coder aDecoder: NSCoder)
@@ -106,8 +81,8 @@ class headerLabel : UILabel
     
     override func awakeFromNib()
     {
-        self.font = primaryFont
-        self.textColor = accentColor
+        self.font = Theme.primaryFont
+        self.textColor = Theme.accentColor
         self.backgroundColor = UIColor.clear
     }
     
@@ -126,8 +101,8 @@ class middleLabel : UILabel
     
     override func awakeFromNib()
     {
-        self.font = smallFont
-        self.textColor = accentColor
+        self.font = Theme.smallFont
+        self.textColor = Theme.accentColor
         self.backgroundColor = UIColor.clear
     }
     
@@ -146,8 +121,8 @@ class italicLabel : UILabel
     
     override func awakeFromNib()
     {
-        self.font = italicFont
-        self.textColor = accentColor
+        self.font = Theme.italicFont
+        self.textColor = Theme.accentColor
         self.backgroundColor = UIColor.clear
     }
     
@@ -202,8 +177,8 @@ class navBarHome : UINavigationBar
     
     override func awakeFromNib()
     {
-        self.barTintColor = accentColor
-        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: primaryFont]
+        self.barTintColor = Theme.accentColor
+        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: Theme.primaryFont]
     }
     
     required init?(coder aDecoder: NSCoder)
@@ -221,8 +196,8 @@ class navBar : UINavigationBar
     
     override func awakeFromNib()
     {
-        self.barTintColor = primaryColor
-        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: primaryFont]
+        self.barTintColor = Theme.primaryColor
+        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: Theme.primaryFont]
         
     }
     
