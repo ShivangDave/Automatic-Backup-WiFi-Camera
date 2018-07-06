@@ -8,6 +8,7 @@
 
 import UIKit
 import AnimatedScrollView
+import NetworkExtension
 import MaterialComponents.MaterialMaskedTransition
 
 class ConnectWiFiVC: UIViewController
@@ -32,9 +33,30 @@ class ConnectWiFiVC: UIViewController
         present(vc, animated: true)
     }
     
+    func connectWifi()
+    {
+        #if !arch(i386) && !arch(x86_64)
+        let config = NEHotspotConfiguration(ssid: "Automatic Backup WiFi Camera", passphrase: "ChangeMe", isWEP: false)
+        
+        NEHotspotConfigurationManager.shared.apply(config) { (error) in
+            if error != nil {
+                if error?.localizedDescription == "already associated."
+                {
+                    
+                }
+                else
+                {
+                
+                }
+            }
+            
+        }
+        #endif
+    }
+    
     @objc func nextVC(_ sender: Any)
     {
-        //pushIt("CameraVC")
+        //connectWifi()
     }
     
     override func viewWillAppear(_ animated: Bool)
