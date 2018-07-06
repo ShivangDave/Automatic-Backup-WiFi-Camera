@@ -12,6 +12,9 @@
 		69383EF820EDF8110087EB5F /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69383EF720EDF8110087EB5F /* background.jpg */; };
 		693FEF5220EED9CE0093461A /* UI One.png in Resources */ = {isa = PBXBuildFile; fileRef = 693FEF5120EED9CE0093461A /* UI One.png */; };
 		693FEF5520EF08580093461A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FEF5320EF08580093461A /* Theme.swift */; };
+		693FEF5920EF12890093461A /* ConnectWiFiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FEF5820EF12890093461A /* ConnectWiFiVC.swift */; };
+		693FEF5B20EF26BA0093461A /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FEF5A20EF26BA0093461A /* CameraVC.swift */; };
+		693FEF5D20EF36C40093461A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FEF5C20EF36C40093461A /* HomeVC.swift */; };
 		695C02BC20EDC8CF00E13F5A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C02BB20EDC8CF00E13F5A /* Constant.swift */; };
 		695C02BF20EDCEAA00E13F5A /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 695C02BD20EDCEAA00E13F5A /* Rubik-Regular.ttf */; };
 		695C02C020EDCEAB00E13F5A /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 695C02BE20EDCEAA00E13F5A /* Rubik-Medium.ttf */; };
@@ -28,6 +31,9 @@
 		69383EF720EDF8110087EB5F /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		693FEF5120EED9CE0093461A /* UI One.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UI One.png"; sourceTree = "<group>"; };
 		693FEF5420EF08580093461A /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Base.lproj/Theme.swift; sourceTree = "<group>"; };
+		693FEF5820EF12890093461A /* ConnectWiFiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWiFiVC.swift; sourceTree = "<group>"; };
+		693FEF5A20EF26BA0093461A /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		693FEF5C20EF36C40093461A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		6952D11383FAD01C4640D2E9 /* Pods_Automatic_Backup_WiFi_Camera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Automatic_Backup_WiFi_Camera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		695C02BB20EDC8CF00E13F5A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		695C02BD20EDCEAA00E13F5A /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
@@ -67,6 +73,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		693FEF5620EF12440093461A /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				6981A52E20EDBBF9001F3038 /* WelcomeVC.swift */,
+				693FEF5820EF12890093461A /* ConnectWiFiVC.swift */,
+				693FEF5A20EF26BA0093461A /* CameraVC.swift */,
+				693FEF5C20EF36C40093461A /* HomeVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		693FEF5720EF124C0093461A /* Theme + Constant */ = {
+			isa = PBXGroup;
+			children = (
+				695C02BB20EDC8CF00E13F5A /* Constant.swift */,
+				693FEF5320EF08580093461A /* Theme.swift */,
+			);
+			path = "Theme + Constant";
+			sourceTree = "<group>";
+		};
 		695C02C120EDCEB300E13F5A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,9 +127,8 @@
 			children = (
 				6981A53E20EDBDC4001F3038 /* Automatic Backup WiFi Camera.entitlements */,
 				6981A52C20EDBBF9001F3038 /* AppDelegate.swift */,
-				695C02BB20EDC8CF00E13F5A /* Constant.swift */,
-				693FEF5320EF08580093461A /* Theme.swift */,
-				6981A52E20EDBBF9001F3038 /* WelcomeVC.swift */,
+				693FEF5720EF124C0093461A /* Theme + Constant */,
+				693FEF5620EF12440093461A /* VC */,
 				695C02C120EDCEB300E13F5A /* Fonts */,
 				6981A53020EDBBF9001F3038 /* Main.storyboard */,
 				6981A53320EDBBFA001F3038 /* Assets.xcassets */,
@@ -271,6 +296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693FEF5920EF12890093461A /* ConnectWiFiVC.swift in Sources */,
+				693FEF5D20EF36C40093461A /* HomeVC.swift in Sources */,
+				693FEF5B20EF26BA0093461A /* CameraVC.swift in Sources */,
 				6981A52F20EDBBF9001F3038 /* WelcomeVC.swift in Sources */,
 				693FEF5520EF08580093461A /* Theme.swift in Sources */,
 				6981A52D20EDBBF9001F3038 /* AppDelegate.swift in Sources */,

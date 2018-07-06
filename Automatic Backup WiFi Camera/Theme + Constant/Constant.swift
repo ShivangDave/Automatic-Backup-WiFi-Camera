@@ -13,9 +13,29 @@ import Alamofire
 
 let activityIndicator = MDCActivityIndicator()
 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 extension UIViewController
 {
+    func showTips(_ view: UIView,_ color: UIColor,_ title: String,_ tip: String)
+    {
+        let highlightController = MDCFeatureHighlightViewController(highlightedView: view) { (_) in
+        }
+        highlightController.titleColor = UIColor.white
+        highlightController.bodyColor = UIColor.white
+        highlightController.titleText = title
+        highlightController.bodyText = tip
+        highlightController.outerHighlightColor =
+        color
+        present(highlightController, animated: true, completion:nil)
+    }
+    
+    func changeBar(_ title: String)
+    {
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.title = title
+    }
+    
     func showSnack(_ message: String, _ buttonTitle:String)
     {
         let message = MDCSnackbarMessage(text: message)
@@ -29,6 +49,25 @@ extension UIViewController
         action.title = buttonTitle
         message.action = action
         MDCSnackbarManager.show(message)
+    }
+    
+    func pushIt(_ vc: String)
+    {
+        let dvc = mainStoryboard.instantiateViewController(withIdentifier: vc)
+        UIView.animate(withDuration: 3.0) {
+            _ = self.navigationController?.pushViewController(dvc, animated: true)
+        }
+
+//        let transition = CATransition()
+//        let materialCurve = MDCAnimationTimingFunction.deceleration
+//        let timingFunction = CAMediaTimingFunction.mdc_function(withType: materialCurve)
+//
+//        transition.duration = 3.0
+//
+//        transition.timingFunction = timingFunction
+//        transition.type = CATransitionType.push
+//        self.navigationController?.view.layer.add(transition, forKey: nil)
+        
     }
     
     func presentIt(_ vc : String)
