@@ -17,6 +17,11 @@ class ConnectWiFiVC: UIViewController
     @IBOutlet weak var cardBackView : cardView!
     @IBOutlet weak var cardView : cardView!
     
+    @IBOutlet weak var btnNext: roundButtonHome!
+    @IBOutlet weak var bottomConst: NSLayoutConstraint!
+    
+    var connect = false
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -33,30 +38,72 @@ class ConnectWiFiVC: UIViewController
         present(vc, animated: true)
     }
     
-    func connectWifi()
+    func connectWifi()->Bool
     {
+//        let ssid = "Automatic Backup WiFi Camera"
+//        let password = "ChangeMe"
+        
+        let ssid = "Get your own WiFi"
+        let password = "follow1969coast"
+        
         #if !arch(i386) && !arch(x86_64)
-        let config = NEHotspotConfiguration(ssid: "Automatic Backup WiFi Camera", passphrase: "ChangeMe", isWEP: false)
+        let config = NEHotspotConfiguration(ssid: ssid, passphrase: password, isWEP: false)
+        
+        startAnimating(activityIndicator)
         
         NEHotspotConfigurationManager.shared.apply(config) { (error) in
-            if error != nil {
-                if error?.localizedDescription == "already associated."
+            if error != nil
+            {
+                let desc = error?.localizedDescription.capitalized
+                self.showSnack(desc ?? "")
+                if desc == "Already Associated."
                 {
-                    
+                    self.connect = true
+                    self.showButton()
+                }
+                self.connect = false
+                self.stopAnimating(activityIndicator)
+            }
+            else
+            {
+                if self.currentSSIDs().first == ssid
+                {
+                    self.showSnack("Success")
+                    self.connect = true
+                    self.showButton()
                 }
                 else
                 {
-                
+                    self.showSnack("Couldn't find WiFi Network")
+                    self.connect = false
                 }
+                self.stopAnimating(activityIndicator)
             }
             
         }
         #endif
+        return true
     }
     
     @objc func nextVC(_ sender: Any)
     {
-        //connectWifi()
+        _ = connectWifi()
+    }
+    
+    func showButton()
+    {
+        if !connect
+        {
+            self.btnNext.isHidden = true
+            self.bottomConst.priority = UILayoutPriority.defaultLow
+        }
+        else
+        {
+            UIView.transition(with: btnNext, duration: 3, options: .transitionCrossDissolve, animations: {
+                self.btnNext.isHidden = false
+                self.bottomConst.priority = UILayoutPriority.defaultHigh
+            })
+        }
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -65,5 +112,6 @@ class ConnectWiFiVC: UIViewController
         animatedScroll.alpha = 0.3
         cardView.addTarget(self, action: #selector(nextVC(_:)), for: .touchUpInside)
         changeBar("CONNECT TO WiFi")
+        showButton()
     }
 }

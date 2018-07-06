@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import MaterialComponents
 import Alamofire
+import SystemConfiguration.CaptiveNetwork
 
 let activityIndicator = MDCActivityIndicator()
 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -18,6 +19,22 @@ var flag = true
 
 extension UIViewController
 {
+    func currentSSIDs() -> [String]
+    {
+        guard let interfaceNames = CNCopySupportedInterfaces() as? [String] else {
+            return []
+        }
+        return interfaceNames.compactMap { name in
+            guard let info = CNCopyCurrentNetworkInfo(name as CFString) as? [String:AnyObject] else {
+                return nil
+            }
+            guard let ssid = info[kCNNetworkInfoKeySSID as String] as? String else {
+                return nil
+            }
+            return ssid
+        }
+    }
+    
     func showTips(_ view: UIView, _ view2: UIView,_ color: UIColor,_ title: String,_ tip: String)
     {
         let highlightController = MDCFeatureHighlightViewController(highlightedView: view) { (_) in
@@ -42,7 +59,7 @@ extension UIViewController
         self.navigationItem.title = title
     }
     
-    func showSnack(_ message: String, _ buttonTitle:String)
+    func showSnackButton(_ message: String, _ buttonTitle:String)
     {
         let message = MDCSnackbarMessage(text: message)
         
@@ -54,6 +71,12 @@ extension UIViewController
         action.handler = handler
         action.title = buttonTitle
         message.action = action
+        MDCSnackbarManager.show(message)
+    }
+    
+    func showSnack(_ message: String)
+    {
+        let message = MDCSnackbarMessage(text: message)
         MDCSnackbarManager.show(message)
     }
     
@@ -86,9 +109,17 @@ extension UIViewController
     
     func startAnimating(_ activityIndicator: MDCActivityIndicator)
     {
-        activityIndicator.sizeToFit()
+        let overlay = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        overlay.tag = 1
+        overlay.backgroundColor = UIColor.white
+        overlay.alpha = 0.8
+        view.addSubview(overlay)
+        
+        activityIndicator.tag = 2
+        activityIndicator.radius = 25.0
         activityIndicator.indicatorMode = .indeterminate
-        activityIndicator.center = self.view.center
+        activityIndicator.center.x = overlay.center.x
+        activityIndicator.center.y = overlay.center.y-70.0
         view.addSubview(activityIndicator)
         
         activityIndicator.startAnimating()
@@ -96,6 +127,8 @@ extension UIViewController
     
     func stopAnimating(_ activityIndicator: MDCActivityIndicator)
     {
+        self.view.viewWithTag(1)?.removeFromSuperview()
+        self.view.viewWithTag(2)?.removeFromSuperview()
         activityIndicator.stopAnimating()
     }
     

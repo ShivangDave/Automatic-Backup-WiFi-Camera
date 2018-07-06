@@ -299,6 +299,7 @@
                                     <constraint firstItem="1hJ-jq-GiS" firstAttribute="width" secondItem="Dec-Ph-wVV" secondAttribute="width" id="gLM-tn-MWu"/>
                                     <constraint firstAttribute="trailing" secondItem="Dec-Ph-wVV" secondAttribute="trailing" constant="30" id="j9A-vG-xKo"/>
                                     <constraint firstItem="1hJ-jq-GiS" firstAttribute="centerY" secondItem="Dec-Ph-wVV" secondAttribute="centerY" id="nUM-bl-2tc"/>
+                                    <constraint firstAttribute="bottom" secondItem="1hJ-jq-GiS" secondAttribute="bottom" priority="750" constant="40" id="oxf-Gi-jlK"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -318,6 +319,8 @@
                     <navigationItem key="navigationItem" id="k55-q8-1z0"/>
                     <connections>
                         <outlet property="animatedScroll" destination="5lU-tp-XjA" id="sbn-kI-brC"/>
+                        <outlet property="bottomConst" destination="TLI-KH-ZFj" id="XIW-P2-eCf"/>
+                        <outlet property="btnNext" destination="4tK-42-C6t" id="yoD-Cc-rQV"/>
                         <outlet property="cardBackView" destination="Dec-Ph-wVV" id="9nV-wN-2hS"/>
                         <outlet property="cardView" destination="1hJ-jq-GiS" id="QWT-3f-Mrq"/>
                     </connections>
