@@ -18,9 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
+        token = defaults.object(forKey:"token") as? String
+        
         if token != nil
         {
             print(token ?? "")
+            let vc = mainStoryboard.instantiateViewController(withIdentifier: "navigationController")
+            self.window?.rootViewController = vc
         }
         else
         {

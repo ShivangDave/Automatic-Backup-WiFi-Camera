@@ -20,6 +20,7 @@ class ConnectWiFiVC: UIViewController
     
     @IBOutlet weak var btnNext: roundButtonHome!
     @IBOutlet weak var bottomConst: NSLayoutConstraint!
+    @IBOutlet weak var lblItalic: italicLabel!
     
     var connect = false
     
@@ -62,7 +63,11 @@ class ConnectWiFiVC: UIViewController
                     self.connect = true
                     self.showButton()
                 }
-                self.connect = false
+                else
+                {
+                    self.connect = false
+                }
+                
                 self.stopAnimating(activityIndicator)
             }
             else
@@ -88,8 +93,23 @@ class ConnectWiFiVC: UIViewController
     
     @objc func nextVC(_ sender: Any)
     {
+        if !connect
+        {
+            _ = connectWifi()
+        }
+        else
+        {
+            cardView.isUserInteractionEnabled = false
+            lblItalic.text = "Tap next to continue."
+            showSnack("Tap next to continue.")
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
         _ = connectWifi()
     }
+    
     
     func showButton()
     {
@@ -100,28 +120,44 @@ class ConnectWiFiVC: UIViewController
         }
         else
         {
-            let data = ["token":appDelegate.token!]
-            
-            Alamofire.request("http://10.3.141.1:3000/connect", method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: []) { (res) in
-                switch res.result
-                {
-                    case .success(let json):
-                        let dic = json as! NSDictionary
-                        let code = dic.value(forKey: "response") as! String
-                        print(code)
-                        
-                        UIView.transition(with: self.btnNext, duration: 3, options: .transitionCrossDissolve, animations: {
-                            self.btnNext.isHidden = false
-                            self.bottomConst.priority = UILayoutPriority.defaultHigh
-                        })
-                    
-                    
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                }
+            //sendReq()
+            Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (_) in
+                self.sendReq()
             }
-            
         }
+    }
+    
+    func sendReq()
+    {
+        let data = ["token":appDelegate.token!]
+        
+        Alamofire.request("http://10.3.141.1:3000/connect", method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: []) { (res) in
+            switch res.result
+            {
+                case .success(let json):
+                    let dic = json as! NSDictionary
+                    let code = dic.value(forKey: "response") as! String
+                    print(code)
+                    UIView.transition(with: self.btnNext, duration: 3, options: .transitionCrossDissolve, animations: {
+                        self.btnNext.isHidden = false
+                        self.bottomConst.priority = UILayoutPriority.defaultHigh
+                        self.lblItalic.text = "Tap next to continue."
+                    })
+                
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func manageToken(_ flag: Bool)->Bool
+    {
+        var temp = false
+        if flag
+        {
+            temp = true
+        }
+        return temp
     }
     
     override func viewWillAppear(_ animated: Bool)

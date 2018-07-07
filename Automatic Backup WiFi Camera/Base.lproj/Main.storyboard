@@ -323,11 +323,42 @@
                         <outlet property="btnNext" destination="4tK-42-C6t" id="yoD-Cc-rQV"/>
                         <outlet property="cardBackView" destination="Dec-Ph-wVV" id="9nV-wN-2hS"/>
                         <outlet property="cardView" destination="1hJ-jq-GiS" id="QWT-3f-Mrq"/>
+                        <outlet property="lblItalic" destination="VlT-uC-SDZ" id="A4O-IG-Jg5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZ3-Nd-Eo8" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2860" y="115.59220389805098"/>
+        </scene>
+        <!--StreamVC-->
+        <scene sceneID="SId-fU-4ru">
+            <objects>
+                <viewController storyboardIdentifier="StreamVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FzU-U0-Q42" customClass="StreamVC" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="57X-H7-gDw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Wd-RY-ZXh">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8Wd-RY-ZXh" firstAttribute="top" secondItem="igO-u7-hpv" secondAttribute="top" id="1xP-bf-Fsh"/>
+                            <constraint firstItem="igO-u7-hpv" firstAttribute="trailing" secondItem="8Wd-RY-ZXh" secondAttribute="trailing" id="OPz-v4-3Gr"/>
+                            <constraint firstItem="igO-u7-hpv" firstAttribute="bottom" secondItem="8Wd-RY-ZXh" secondAttribute="bottom" id="dwO-Xc-En1"/>
+                            <constraint firstItem="8Wd-RY-ZXh" firstAttribute="leading" secondItem="igO-u7-hpv" secondAttribute="leading" id="hC8-J1-uAh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="igO-u7-hpv"/>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="8Wd-RY-ZXh" id="d1q-Jk-DNs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5IN-js-k6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4788" y="116"/>
         </scene>
         <!--WELCOME-->
         <scene sceneID="PbD-uh-gk1">
