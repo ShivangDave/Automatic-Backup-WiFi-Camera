@@ -19,13 +19,11 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         super.viewDidLoad()
         navBar.delegate = self
         changeBar("HOME")
-        
-        showTips(videoButton, navBar,Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
     }
     
     override func viewDidAppear(_ animated: Bool)
     {
-        
+        showTips(videoButton, navBar,Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
     }
     
     @IBAction func cameraClicked(_ sender : Any)

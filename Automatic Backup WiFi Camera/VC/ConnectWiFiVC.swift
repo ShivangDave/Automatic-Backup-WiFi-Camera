@@ -23,6 +23,7 @@ class ConnectWiFiVC: UIViewController
     @IBOutlet weak var lblItalic: italicLabel!
     
     var connect = false
+    var registered = false
     
     override func viewDidLoad()
     {
@@ -93,15 +94,15 @@ class ConnectWiFiVC: UIViewController
     
     @objc func nextVC(_ sender: Any)
     {
-        if !connect
-        {
-            _ = connectWifi()
-        }
-        else
+        if connect && registered
         {
             cardView.isUserInteractionEnabled = false
             lblItalic.text = "Tap next to continue."
             showSnack("Tap next to continue.")
+        }
+        else
+        {
+            _ = connectWifi()
         }
     }
     
@@ -120,7 +121,6 @@ class ConnectWiFiVC: UIViewController
         }
         else
         {
-            //sendReq()
             Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (_) in
                 self.sendReq()
             }
@@ -138,6 +138,8 @@ class ConnectWiFiVC: UIViewController
                     let dic = json as! NSDictionary
                     let code = dic.value(forKey: "response") as! String
                     print(code)
+                    self.registered = true
+                    
                     UIView.transition(with: self.btnNext, duration: 3, options: .transitionCrossDissolve, animations: {
                         self.btnNext.isHidden = false
                         self.bottomConst.priority = UILayoutPriority.defaultHigh
@@ -145,19 +147,10 @@ class ConnectWiFiVC: UIViewController
                     })
                 
                 case .failure(let error):
+                    self.registered = false
                     print(error.localizedDescription)
             }
         }
-    }
-    
-    func manageToken(_ flag: Bool)->Bool
-    {
-        var temp = false
-        if flag
-        {
-            temp = true
-        }
-        return temp
     }
     
     override func viewWillAppear(_ animated: Bool)
