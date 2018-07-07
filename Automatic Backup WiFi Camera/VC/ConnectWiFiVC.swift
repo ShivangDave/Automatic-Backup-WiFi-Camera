@@ -9,6 +9,7 @@
 import UIKit
 import AnimatedScrollView
 import NetworkExtension
+import Alamofire
 import MaterialComponents.MaterialMaskedTransition
 
 class ConnectWiFiVC: UIViewController
@@ -40,11 +41,11 @@ class ConnectWiFiVC: UIViewController
     
     func connectWifi()->Bool
     {
-//        let ssid = "Automatic Backup WiFi Camera"
-//        let password = "ChangeMe"
+        let ssid = "Automatic Backup WiFi Camera"
+        let password = "ChangeMe"
         
-        let ssid = "Get your own WiFi"
-        let password = "follow1969coast"
+//        let ssid = "Get your own WiFi"
+//        let password = "follow1969coast"
         
         #if !arch(i386) && !arch(x86_64)
         let config = NEHotspotConfiguration(ssid: ssid, passphrase: password, isWEP: false)
@@ -82,7 +83,7 @@ class ConnectWiFiVC: UIViewController
             
         }
         #endif
-        return true
+        return self.connect
     }
     
     @objc func nextVC(_ sender: Any)
@@ -99,10 +100,27 @@ class ConnectWiFiVC: UIViewController
         }
         else
         {
-            UIView.transition(with: btnNext, duration: 3, options: .transitionCrossDissolve, animations: {
-                self.btnNext.isHidden = false
-                self.bottomConst.priority = UILayoutPriority.defaultHigh
-            })
+            let data = ["token":appDelegate.token!]
+            
+            Alamofire.request("http://10.3.141.1:3000/connect", method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: []) { (res) in
+                switch res.result
+                {
+                    case .success(let json):
+                        let dic = json as! NSDictionary
+                        let code = dic.value(forKey: "response") as! String
+                        print(code)
+                        
+                        UIView.transition(with: self.btnNext, duration: 3, options: .transitionCrossDissolve, animations: {
+                            self.btnNext.isHidden = false
+                            self.bottomConst.priority = UILayoutPriority.defaultHigh
+                        })
+                    
+                    
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                }
+            }
+            
         }
     }
     

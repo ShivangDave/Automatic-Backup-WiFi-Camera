@@ -131,33 +131,6 @@ extension UIViewController
         self.view.viewWithTag(2)?.removeFromSuperview()
         activityIndicator.stopAnimating()
     }
-    
-    func sendReq(_ data:Parameters,_ url:String)->(String,Bool)
-    {
-        var response = ""
-        var success = false
-        
-        Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default).responseJSON{(res) in
-            switch res.result
-            {
-            case .success(let json):
-                let dic = json as! NSDictionary
-                let code = dic.value(forKey: "response") as! String
-                response = code
-                success = true
-                //print(code)
-                //self.showAlert("Response",code)
-                
-                
-            case .failure(let error):
-                response = error.localizedDescription
-                success = false
-                //print(error.localizedDescription)
-                //self.showAlert("Response",error.localizedDescription)
-            }
-        }
-        return (response,success)
-    }
 }
 
 extension Data
