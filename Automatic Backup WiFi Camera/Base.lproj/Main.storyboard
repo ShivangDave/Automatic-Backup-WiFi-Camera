@@ -45,7 +45,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mZ-0S-nzb" customClass="cardView" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
                                         <rect key="frame" x="30" y="40" width="315" height="459"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-1024" translatesAutoresizingMaskIntoConstraints="NO" id="7Ox-ed-2h4">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_small.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7Ox-ed-2h4">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="313"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify Video Feed." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSg-TT-AnP" customClass="headerLabel" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
@@ -226,7 +226,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dec-Ph-wVV" customClass="cardView" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
                                         <rect key="frame" x="30" y="40" width="315" height="459"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-1024" translatesAutoresizingMaskIntoConstraints="NO" id="Vdb-CK-h5z">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_small.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Vdb-CK-h5z">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="313"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press Join on WiFi Prompt." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Dn-3P-1Cb" customClass="headerLabel" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
@@ -377,7 +377,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2s-O2-KcC" customClass="cardView" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
                                         <rect key="frame" x="30" y="40" width="315" height="459"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-1024" translatesAutoresizingMaskIntoConstraints="NO" id="dJS-2y-Lc6">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_small.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dJS-2y-Lc6">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="320"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatic Backup WiFi Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD9-z0-N74" customClass="headerLabel" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
@@ -516,9 +516,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-1024" width="341" height="341"/>
         <image name="ic_arrow_24_filled" width="24" height="24"/>
         <image name="ic_done_24_filled" width="24" height="24"/>
         <image name="ic_video_24_filled" width="24" height="24"/>
+        <image name="icon_small.jpg" width="1024" height="1024"/>
     </resources>
 </document>

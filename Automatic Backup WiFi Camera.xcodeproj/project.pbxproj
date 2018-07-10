@@ -24,6 +24,7 @@
 		6981A53220EDBBF9001F3038 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6981A53020EDBBF9001F3038 /* Main.storyboard */; };
 		6981A53420EDBBFA001F3038 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6981A53320EDBBFA001F3038 /* Assets.xcassets */; };
 		6981A53720EDBBFA001F3038 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6981A53520EDBBFA001F3038 /* LaunchScreen.storyboard */; };
+		69B127C820F52DAD00A94C6B /* icon_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69B127C720F52DAC00A94C6B /* icon_small.jpg */; };
 		69E05EE020F0965800CE9BC1 /* MjpegStreamingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E05EDF20F0965800CE9BC1 /* MjpegStreamingController.swift */; };
 		69E05EE220F096B500CE9BC1 /* StreamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E05EE120F096B500CE9BC1 /* StreamVC.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		6981A53820EDBBFA001F3038 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6981A53E20EDBDC4001F3038 /* Automatic Backup WiFi Camera.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Automatic Backup WiFi Camera.entitlements"; sourceTree = "<group>"; };
 		6981A54220EDBDDA001F3038 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		69B127C720F52DAC00A94C6B /* icon_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_small.jpg; sourceTree = "<group>"; };
 		69E05EDF20F0965800CE9BC1 /* MjpegStreamingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MjpegStreamingController.swift; sourceTree = "<group>"; };
 		69E05EE120F096B500CE9BC1 /* StreamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamVC.swift; sourceTree = "<group>"; };
 		B0A3055D1D454F16182FDABD /* Pods-Automatic Backup WiFi Camera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Automatic Backup WiFi Camera.release.xcconfig"; path = "Pods/Target Support Files/Pods-Automatic Backup WiFi Camera/Pods-Automatic Backup WiFi Camera.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				69383EF720EDF8110087EB5F /* background.jpg */,
 				695C02BE20EDCEAA00E13F5A /* Rubik-Medium.ttf */,
 				695C02BD20EDCEAA00E13F5A /* Rubik-Regular.ttf */,
+				69B127C720F52DAC00A94C6B /* icon_small.jpg */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				69383EF820EDF8110087EB5F /* background.jpg in Resources */,
 				693FEF5220EED9CE0093461A /* UI One.png in Resources */,
 				6981A53220EDBBF9001F3038 /* Main.storyboard in Resources */,
+				69B127C820F52DAD00A94C6B /* icon_small.jpg in Resources */,
 				695C02C020EDCEAB00E13F5A /* Rubik-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
