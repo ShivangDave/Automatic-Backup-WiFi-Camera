@@ -637,6 +637,9 @@
                                     <constraint firstAttribute="height" constant="64" id="aAb-ra-5bN"/>
                                 </constraints>
                                 <state key="normal" image="ic_done_24_filled"/>
+                                <connections>
+                                    <action selector="btnSuccessClicked:" destination="E53-e4-P4C" eventType="touchUpInside" id="DMT-f8-Z6q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
