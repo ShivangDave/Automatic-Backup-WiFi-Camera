@@ -24,6 +24,8 @@
 		6981A53220EDBBF9001F3038 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6981A53020EDBBF9001F3038 /* Main.storyboard */; };
 		6981A53420EDBBFA001F3038 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6981A53320EDBBFA001F3038 /* Assets.xcassets */; };
 		6981A53720EDBBFA001F3038 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6981A53520EDBBFA001F3038 /* LaunchScreen.storyboard */; };
+		69827F2920FD59EB0082E124 /* Automatic_Backup_WiFi_CameraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69827F2820FD59EB0082E124 /* Automatic_Backup_WiFi_CameraUITests.swift */; };
+		69827F3A20FD5A100082E124 /* Automatic_Backup_WiFi_CameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69827F3920FD5A100082E124 /* Automatic_Backup_WiFi_CameraTests.swift */; };
 		69859B0720F959CD008D8B99 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69859B0620F959CD008D8B99 /* SettingsVC.swift */; };
 		69859B0920F96349008D8B99 /* HomeViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69859B0820F96349008D8B99 /* HomeViewVC.swift */; };
 		69859B0C20F9688B008D8B99 /* SubmitReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69859B0B20F9688B008D8B99 /* SubmitReportVC.swift */; };
@@ -31,6 +33,23 @@
 		69E05EE020F0965800CE9BC1 /* MjpegStreamingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E05EDF20F0965800CE9BC1 /* MjpegStreamingController.swift */; };
 		69E05EE220F096B500CE9BC1 /* StreamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E05EE120F096B500CE9BC1 /* StreamVC.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69827F2320FD59D90082E124 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6981A52120EDBBF9001F3038 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6981A52820EDBBF9001F3038;
+			remoteInfo = "Automatic Backup WiFi Camera";
+		};
+		69827F3320FD59FB0082E124 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6981A52120EDBBF9001F3038 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6981A52820EDBBF9001F3038;
+			remoteInfo = "Automatic Backup WiFi Camera";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2EEEEF8C277057B18771ED69 /* Pods-Automatic Backup WiFi Camera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Automatic Backup WiFi Camera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Automatic Backup WiFi Camera/Pods-Automatic Backup WiFi Camera.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +75,13 @@
 		6981A53820EDBBFA001F3038 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6981A53E20EDBDC4001F3038 /* Automatic Backup WiFi Camera.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Automatic Backup WiFi Camera.entitlements"; sourceTree = "<group>"; };
 		6981A54220EDBDDA001F3038 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		69827F1E20FD59D80082E124 /* Automatic Backup WiFi CameraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Automatic Backup WiFi CameraUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69827F2220FD59D90082E124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69827F2820FD59EB0082E124 /* Automatic_Backup_WiFi_CameraUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Automatic_Backup_WiFi_CameraUITests.swift; sourceTree = "<group>"; };
+		69827F2E20FD59FB0082E124 /* Automatic Backup WiFi CameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Automatic Backup WiFi CameraTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69827F3220FD59FB0082E124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69827F3820FD5A100082E124 /* Automatic Backup WiFi CameraTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Automatic Backup WiFi CameraTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		69827F3920FD5A100082E124 /* Automatic_Backup_WiFi_CameraTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Automatic_Backup_WiFi_CameraTests.swift; sourceTree = "<group>"; };
 		69859B0620F959CD008D8B99 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		69859B0820F96349008D8B99 /* HomeViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewVC.swift; sourceTree = "<group>"; };
 		69859B0B20F9688B008D8B99 /* SubmitReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitReportVC.swift; sourceTree = "<group>"; };
@@ -72,6 +98,20 @@
 			files = (
 				69383EF420EDF6EE0087EB5F /* Pods_Automatic_Backup_WiFi_Camera.framework in Frameworks */,
 				69383EE820EDF64B0087EB5F /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69827F1B20FD59D80082E124 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69827F2B20FD59FB0082E124 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				6981A52B20EDBBF9001F3038 /* Automatic Backup WiFi Camera */,
+				69827F2F20FD59FB0082E124 /* Automatic Backup WiFi CameraTests */,
+				69827F1F20FD59D80082E124 /* Automatic Backup WiFi CameraUITests */,
 				6981A52A20EDBBF9001F3038 /* Products */,
 				6981A53F20EDBDD1001F3038 /* Frameworks */,
 				40153D5602F90074C9C53974 /* Pods */,
@@ -137,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				6981A52920EDBBF9001F3038 /* Automatic Backup WiFi Camera.app */,
+				69827F1E20FD59D80082E124 /* Automatic Backup WiFi CameraUITests.xctest */,
+				69827F2E20FD59FB0082E124 /* Automatic Backup WiFi CameraTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,6 +210,25 @@
 				6952D11383FAD01C4640D2E9 /* Pods_Automatic_Backup_WiFi_Camera.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69827F1F20FD59D80082E124 /* Automatic Backup WiFi CameraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				69827F2820FD59EB0082E124 /* Automatic_Backup_WiFi_CameraUITests.swift */,
+				69827F2220FD59D90082E124 /* Info.plist */,
+			);
+			path = "Automatic Backup WiFi CameraUITests";
+			sourceTree = "<group>";
+		};
+		69827F2F20FD59FB0082E124 /* Automatic Backup WiFi CameraTests */ = {
+			isa = PBXGroup;
+			children = (
+				69827F3920FD5A100082E124 /* Automatic_Backup_WiFi_CameraTests.swift */,
+				69827F3220FD59FB0082E124 /* Info.plist */,
+				69827F3820FD5A100082E124 /* Automatic Backup WiFi CameraTests-Bridging-Header.h */,
+			);
+			path = "Automatic Backup WiFi CameraTests";
 			sourceTree = "<group>";
 		};
 		69859B0A20F965FD008D8B99 /* SubVC */ = {
@@ -200,6 +263,42 @@
 			productReference = 6981A52920EDBBF9001F3038 /* Automatic Backup WiFi Camera.app */;
 			productType = "com.apple.product-type.application";
 		};
+		69827F1D20FD59D80082E124 /* Automatic Backup WiFi CameraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69827F2520FD59D90082E124 /* Build configuration list for PBXNativeTarget "Automatic Backup WiFi CameraUITests" */;
+			buildPhases = (
+				69827F1A20FD59D80082E124 /* Sources */,
+				69827F1B20FD59D80082E124 /* Frameworks */,
+				69827F1C20FD59D80082E124 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69827F2420FD59D90082E124 /* PBXTargetDependency */,
+			);
+			name = "Automatic Backup WiFi CameraUITests";
+			productName = "Automatic Backup WiFi CameraUITests";
+			productReference = 69827F1E20FD59D80082E124 /* Automatic Backup WiFi CameraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		69827F2D20FD59FB0082E124 /* Automatic Backup WiFi CameraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69827F3520FD59FB0082E124 /* Build configuration list for PBXNativeTarget "Automatic Backup WiFi CameraTests" */;
+			buildPhases = (
+				69827F2A20FD59FB0082E124 /* Sources */,
+				69827F2B20FD59FB0082E124 /* Frameworks */,
+				69827F2C20FD59FB0082E124 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69827F3420FD59FB0082E124 /* PBXTargetDependency */,
+			);
+			name = "Automatic Backup WiFi CameraTests";
+			productName = "Automatic Backup WiFi CameraTests";
+			productReference = 69827F2E20FD59FB0082E124 /* Automatic Backup WiFi CameraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -230,6 +329,15 @@
 							};
 						};
 					};
+					69827F1D20FD59D80082E124 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 6981A52820EDBBF9001F3038;
+					};
+					69827F2D20FD59FB0082E124 = {
+						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
+						TestTargetID = 6981A52820EDBBF9001F3038;
+					};
 				};
 			};
 			buildConfigurationList = 6981A52420EDBBF9001F3038 /* Build configuration list for PBXProject "Automatic Backup WiFi Camera" */;
@@ -246,6 +354,8 @@
 			projectRoot = "";
 			targets = (
 				6981A52820EDBBF9001F3038 /* Automatic Backup WiFi Camera */,
+				69827F1D20FD59D80082E124 /* Automatic Backup WiFi CameraUITests */,
+				69827F2D20FD59FB0082E124 /* Automatic Backup WiFi CameraTests */,
 			);
 		};
 /* End PBXProject section */
@@ -263,6 +373,20 @@
 				6981A53220EDBBF9001F3038 /* Main.storyboard in Resources */,
 				69B127C820F52DAD00A94C6B /* icon_small.jpg in Resources */,
 				695C02C020EDCEAB00E13F5A /* Rubik-Medium.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69827F1C20FD59D80082E124 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69827F2C20FD59FB0082E124 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +466,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		69827F1A20FD59D80082E124 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69827F2920FD59EB0082E124 /* Automatic_Backup_WiFi_CameraUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69827F2A20FD59FB0082E124 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69827F3A20FD5A100082E124 /* Automatic_Backup_WiFi_CameraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69827F2420FD59D90082E124 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6981A52820EDBBF9001F3038 /* Automatic Backup WiFi Camera */;
+			targetProxy = 69827F2320FD59D90082E124 /* PBXContainerItemProxy */;
+		};
+		69827F3420FD59FB0082E124 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6981A52820EDBBF9001F3038 /* Automatic Backup WiFi Camera */;
+			targetProxy = 69827F3320FD59FB0082E124 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		693FEF5320EF08580093461A /* Theme.swift */ = {
@@ -493,7 +646,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Automatic Backup WiFi Camera/Automatic Backup WiFi Camera.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = DF4JEFRQHJ;
 				INFOPLIST_FILE = "Automatic Backup WiFi Camera/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -504,7 +657,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "sd.Automatic-Backup-WiFi-Camera";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e0147ca9-4a98-4b9c-9dc7-f6e7053bd98c";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = Test_profile;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -517,7 +670,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Automatic Backup WiFi Camera/Automatic Backup WiFi Camera.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = DF4JEFRQHJ;
 				INFOPLIST_FILE = "Automatic Backup WiFi Camera/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -528,9 +681,104 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "sd.Automatic-Backup-WiFi-Camera";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e0147ca9-4a98-4b9c-9dc7-f6e7053bd98c";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = Test_profile;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		69827F2620FD59D90082E124 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = DF4JEFRQHJ;
+				INFOPLIST_FILE = "Automatic Backup WiFi CameraUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "sd.Automatic-Backup-WiFi-CameraUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e0147ca9-4a98-4b9c-9dc7-f6e7053bd98c";
+				PROVISIONING_PROFILE_SPECIFIER = UI_TEST;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Automatic Backup WiFi Camera";
+			};
+			name = Debug;
+		};
+		69827F2720FD59D90082E124 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = DF4JEFRQHJ;
+				INFOPLIST_FILE = "Automatic Backup WiFi CameraUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "sd.Automatic-Backup-WiFi-CameraUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e0147ca9-4a98-4b9c-9dc7-f6e7053bd98c";
+				PROVISIONING_PROFILE_SPECIFIER = UI_TEST;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Automatic Backup WiFi Camera";
+			};
+			name = Release;
+		};
+		69827F3620FD59FB0082E124 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DF4JEFRQHJ;
+				INFOPLIST_FILE = "Automatic Backup WiFi CameraTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "sd.Automatic-Backup-WiFi-CameraTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Automatic Backup WiFi CameraTests/Automatic Backup WiFi CameraTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Automatic Backup WiFi Camera.app/Automatic Backup WiFi Camera";
+			};
+			name = Debug;
+		};
+		69827F3720FD59FB0082E124 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DF4JEFRQHJ;
+				INFOPLIST_FILE = "Automatic Backup WiFi CameraTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "sd.Automatic-Backup-WiFi-CameraTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Automatic Backup WiFi CameraTests/Automatic Backup WiFi CameraTests-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Automatic Backup WiFi Camera.app/Automatic Backup WiFi Camera";
 			};
 			name = Release;
 		};
@@ -551,6 +799,24 @@
 			buildConfigurations = (
 				6981A53C20EDBBFA001F3038 /* Debug */,
 				6981A53D20EDBBFA001F3038 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69827F2520FD59D90082E124 /* Build configuration list for PBXNativeTarget "Automatic Backup WiFi CameraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69827F2620FD59D90082E124 /* Debug */,
+				69827F2720FD59D90082E124 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69827F3520FD59FB0082E124 /* Build configuration list for PBXNativeTarget "Automatic Backup WiFi CameraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69827F3620FD59FB0082E124 /* Debug */,
+				69827F3720FD59FB0082E124 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
