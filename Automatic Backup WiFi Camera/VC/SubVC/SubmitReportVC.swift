@@ -20,16 +20,28 @@ class SubmitReportVC: UIViewController, UITextViewDelegate
     
     @IBAction func btnSuccessClicked(_ sender: roundButtonHome)
     {
-        if fullName.textView?.text != "" && email.textView?.text != "" && Message.textView?.text != ""
+        if validation()
         {
             
         }
     }
     
+    func validation()->Bool
+    {
+        var success = false
+        if fullName.textView?.text != "" && email.textView?.text != "" && Message.textView?.text != ""
+        {
+            
+        }
+        return success
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         self.navigationItem.title = "CONTACT US"
+        
         hideKeyboardWhenTappedAround()
         
         fullName.textView?.tag = 1

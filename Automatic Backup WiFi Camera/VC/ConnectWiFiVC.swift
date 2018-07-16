@@ -111,22 +111,38 @@ class ConnectWiFiVC: UIViewController
         _ = connectWifi()
     }
     
+    func buttonAnimation()
+    {
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false)
+        { (_) in
+            UIView.transition(with: self.btnNext, duration: 2, options: .transitionCrossDissolve, animations: {
+                self.bottomConst.priority = UILayoutPriority.init(999.0)
+                self.view.layoutIfNeeded()
+                self.btnNext.isHidden = false
+                self.lblItalic.text = "Tap next to continue."
+            })
+        }
+    }
     
     func showButton()
     {
-        #if !arch(i386) && !arch(x86_64)
         if !connect
         {
             self.btnNext.isHidden = true
-            self.bottomConst.priority = UILayoutPriority.defaultLow
+            self.bottomConst.priority = UILayoutPriority.init(1.0)
+            
+            #if arch(i386) || arch(x86_64)
+                buttonAnimation()
+            #endif
         }
         else
         {
             Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (_) in
+                #if !arch(i386) && !arch(x86_64)
                 self.sendReq()
+                #endif
             }
         }
-        #endif
     }
     
     func sendReq()
@@ -142,18 +158,13 @@ class ConnectWiFiVC: UIViewController
                     print(code)
                     self.registered = true
                     
-                    UIView.transition(with: self.btnNext, duration: 3, options: .transitionCrossDissolve, animations: {
-                        self.btnNext.isHidden = false
-                        self.bottomConst.priority = UILayoutPriority.defaultHigh
-                        self.lblItalic.text = "Tap next to continue."
-                    })
+                    self.buttonAnimation()
                 
                 case .failure(let error):
                     self.registered = false
                     print(error.localizedDescription)
             }
         }
-        self.view.layoutIfNeeded()
     }
     
     override func viewWillAppear(_ animated: Bool)
