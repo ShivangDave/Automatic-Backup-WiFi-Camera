@@ -31,7 +31,7 @@ class SubmitReportVC: UIViewController, UITextViewDelegate
         var success = false
         if fullName.textView?.text != "" && email.textView?.text != "" && Message.textView?.text != ""
         {
-            
+            success = true
         }
         return success
     }
