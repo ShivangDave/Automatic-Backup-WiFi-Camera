@@ -24,6 +24,9 @@
 		6981A53220EDBBF9001F3038 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6981A53020EDBBF9001F3038 /* Main.storyboard */; };
 		6981A53420EDBBFA001F3038 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6981A53320EDBBFA001F3038 /* Assets.xcassets */; };
 		6981A53720EDBBFA001F3038 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6981A53520EDBBFA001F3038 /* LaunchScreen.storyboard */; };
+		69859B0720F959CD008D8B99 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69859B0620F959CD008D8B99 /* SettingsVC.swift */; };
+		69859B0920F96349008D8B99 /* HomeViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69859B0820F96349008D8B99 /* HomeViewVC.swift */; };
+		69859B0C20F9688B008D8B99 /* SubmitReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69859B0B20F9688B008D8B99 /* SubmitReportVC.swift */; };
 		69B127C820F52DAD00A94C6B /* icon_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69B127C720F52DAC00A94C6B /* icon_small.jpg */; };
 		69E05EE020F0965800CE9BC1 /* MjpegStreamingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E05EDF20F0965800CE9BC1 /* MjpegStreamingController.swift */; };
 		69E05EE220F096B500CE9BC1 /* StreamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E05EE120F096B500CE9BC1 /* StreamVC.swift */; };
@@ -53,6 +56,9 @@
 		6981A53820EDBBFA001F3038 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6981A53E20EDBDC4001F3038 /* Automatic Backup WiFi Camera.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Automatic Backup WiFi Camera.entitlements"; sourceTree = "<group>"; };
 		6981A54220EDBDDA001F3038 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		69859B0620F959CD008D8B99 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		69859B0820F96349008D8B99 /* HomeViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewVC.swift; sourceTree = "<group>"; };
+		69859B0B20F9688B008D8B99 /* SubmitReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitReportVC.swift; sourceTree = "<group>"; };
 		69B127C720F52DAC00A94C6B /* icon_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_small.jpg; sourceTree = "<group>"; };
 		69E05EDF20F0965800CE9BC1 /* MjpegStreamingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MjpegStreamingController.swift; sourceTree = "<group>"; };
 		69E05EE120F096B500CE9BC1 /* StreamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamVC.swift; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 				693FEF5A20EF26BA0093461A /* CameraVC.swift */,
 				693FEF5C20EF36C40093461A /* HomeVC.swift */,
 				69E05EE120F096B500CE9BC1 /* StreamVC.swift */,
+				69859B0A20F965FD008D8B99 /* SubVC */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -159,6 +166,16 @@
 				6952D11383FAD01C4640D2E9 /* Pods_Automatic_Backup_WiFi_Camera.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69859B0A20F965FD008D8B99 /* SubVC */ = {
+			isa = PBXGroup;
+			children = (
+				69859B0820F96349008D8B99 /* HomeViewVC.swift */,
+				69859B0620F959CD008D8B99 /* SettingsVC.swift */,
+				69859B0B20F9688B008D8B99 /* SubmitReportVC.swift */,
+			);
+			path = SubVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69859B0720F959CD008D8B99 /* SettingsVC.swift in Sources */,
 				693FEF5920EF12890093461A /* ConnectWiFiVC.swift in Sources */,
 				693FEF5D20EF36C40093461A /* HomeVC.swift in Sources */,
 				693FEF5B20EF26BA0093461A /* CameraVC.swift in Sources */,
@@ -316,9 +334,11 @@
 				69E05EE220F096B500CE9BC1 /* StreamVC.swift in Sources */,
 				693FEF5520EF08580093461A /* Theme.swift in Sources */,
 				69E05EE020F0965800CE9BC1 /* MjpegStreamingController.swift in Sources */,
+				69859B0920F96349008D8B99 /* HomeViewVC.swift in Sources */,
 				6981A52D20EDBBF9001F3038 /* AppDelegate.swift in Sources */,
 				695C02BC20EDC8CF00E13F5A /* Constant.swift in Sources */,
 				691EDEB020EFEB57007A00B0 /* Structures.swift in Sources */,
+				69859B0C20F9688B008D8B99 /* SubmitReportVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +492,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Automatic Backup WiFi Camera/Automatic Backup WiFi Camera.entitlements";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF4JEFRQHJ;
 				INFOPLIST_FILE = "Automatic Backup WiFi Camera/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -483,7 +504,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "sd.Automatic-Backup-WiFi-Camera";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e0147ca9-4a98-4b9c-9dc7-f6e7053bd98c";
-				PROVISIONING_PROFILE_SPECIFIER = Test_profile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -495,7 +516,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Automatic Backup WiFi Camera/Automatic Backup WiFi Camera.entitlements";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF4JEFRQHJ;
 				INFOPLIST_FILE = "Automatic Backup WiFi Camera/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -506,7 +528,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "sd.Automatic-Backup-WiFi-Camera";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e0147ca9-4a98-4b9c-9dc7-f6e7053bd98c";
-				PROVISIONING_PROFILE_SPECIFIER = Test_profile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

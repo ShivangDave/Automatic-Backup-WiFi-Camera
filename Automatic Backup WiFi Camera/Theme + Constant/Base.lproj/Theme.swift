@@ -9,7 +9,27 @@
 import Foundation
 import UIKit
 import MaterialComponents.MaterialCards
+import MaterialComponents.MDCMultilineTextField
 import AnimatedScrollView
+
+class floatText: MDCMultilineTextField
+{
+    override init(frame: CGRect)
+    {
+        super.init(frame: frame)
+    }
+    
+    override func awakeFromNib()
+    {
+        self.textColor = Theme.accentColor
+        self.placeholderLabel.textColor = Theme.primaryColor
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+    }
+}
 
 class tabbar : MDCBottomNavigationBar
 {

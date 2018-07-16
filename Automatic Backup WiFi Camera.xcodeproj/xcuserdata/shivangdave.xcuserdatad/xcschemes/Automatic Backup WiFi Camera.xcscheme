@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "69827EB420FD4FC00082E124"
+               BuildableName = "Automatic Backup WiFi CameraTests.xctest"
+               BlueprintName = "Automatic Backup WiFi CameraTests"
+               ReferencedContainer = "container:Automatic Backup WiFi Camera.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "69827EC220FD4FCF0082E124"
+               BuildableName = "Automatic Backup WiFi CameraUITests.xctest"
+               BlueprintName = "Automatic Backup WiFi CameraUITests"
+               ReferencedContainer = "container:Automatic Backup WiFi Camera.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

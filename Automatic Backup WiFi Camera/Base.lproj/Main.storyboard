@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1FM-7W-849">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1FM-7W-849">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -148,11 +148,14 @@
         <!--HomeVC-->
         <scene sceneID="Vpr-Ia-CeB">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="NUf-3a-CA0" customClass="HomeVC" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="HomeVC" storyboardIdentifier="HomeVC" id="NUf-3a-CA0" customClass="HomeVC" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lff-OE-grE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enj-OA-5e8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="547"/>
+                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXP-ok-Q6v" customClass="tabbar" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="547" width="375" height="56"/>
                                 <constraints>
@@ -176,20 +179,27 @@
                             <constraint firstItem="BSh-6T-AX5" firstAttribute="trailing" secondItem="1MO-hm-Cp2" secondAttribute="trailing" constant="20" id="Nq9-Fa-tjA"/>
                             <constraint firstItem="dXP-ok-Q6v" firstAttribute="trailing" secondItem="BSh-6T-AX5" secondAttribute="trailing" id="PKr-mt-EnX"/>
                             <constraint firstItem="dXP-ok-Q6v" firstAttribute="leading" secondItem="BSh-6T-AX5" secondAttribute="leading" id="Xlq-ih-zlq"/>
+                            <constraint firstItem="BSh-6T-AX5" firstAttribute="trailing" secondItem="enj-OA-5e8" secondAttribute="trailing" id="XoF-Ld-jUc"/>
+                            <constraint firstItem="enj-OA-5e8" firstAttribute="top" secondItem="BSh-6T-AX5" secondAttribute="top" id="ekU-CB-DKK"/>
                             <constraint firstItem="dXP-ok-Q6v" firstAttribute="bottom" secondItem="BSh-6T-AX5" secondAttribute="bottom" id="hGQ-l6-uRQ"/>
                             <constraint firstItem="dXP-ok-Q6v" firstAttribute="top" secondItem="1MO-hm-Cp2" secondAttribute="bottom" constant="20" id="r99-Z2-PNE"/>
+                            <constraint firstItem="enj-OA-5e8" firstAttribute="leading" secondItem="BSh-6T-AX5" secondAttribute="leading" id="soh-q2-uqT"/>
+                            <constraint firstItem="dXP-ok-Q6v" firstAttribute="top" secondItem="enj-OA-5e8" secondAttribute="bottom" id="vqM-cu-ydu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BSh-6T-AX5"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FxN-Qz-hrv"/>
+                    <navigationItem key="navigationItem" id="FxN-Qz-hrv">
+                        <barButtonItem key="backBarButtonItem" title=" " id="UGs-af-OOC"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="containerView" destination="enj-OA-5e8" id="taX-ue-ebO"/>
                         <outlet property="navBar" destination="dXP-ok-Q6v" id="euB-Yn-Ad9"/>
                         <outlet property="videoButton" destination="1MO-hm-Cp2" id="bru-Mi-Pkq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EpG-ai-MsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4145" y="116"/>
+            <point key="canvasLocation" x="4144.8000000000002" y="115.59220389805098"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XVR-ST-qQW">
@@ -358,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5IN-js-k6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4788" y="116"/>
+            <point key="canvasLocation" x="4145" y="811"/>
         </scene>
         <!--WELCOME-->
         <scene sceneID="PbD-uh-gk1">
@@ -513,6 +523,190 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKp-8b-D3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3505" y="-573"/>
+        </scene>
+        <!--SettingsVC-->
+        <scene sceneID="yvL-pG-xev">
+            <objects>
+                <viewController restorationIdentifier="SettingsVC" storyboardIdentifier="SettingsVC" id="4AR-KK-KxD" customClass="SettingsVC" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O4O-1d-sC6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SN8-3x-TE2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="io9-4d-NS3">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <view key="tableFooterView" contentMode="scaleToFill" id="k3y-mJ-gid">
+                                            <rect key="frame" x="0.0" y="72" width="375" height="1"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="8sK-BR-e7N">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8sK-BR-e7N" id="aFx-KB-dOI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="4AR-KK-KxD" id="X79-rQ-w0Q"/>
+                                            <outlet property="delegate" destination="4AR-KK-KxD" id="80H-Go-Lcb"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="io9-4d-NS3" firstAttribute="top" secondItem="SN8-3x-TE2" secondAttribute="top" id="3RM-A0-pCJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="io9-4d-NS3" secondAttribute="bottom" id="VB4-fu-0HJ"/>
+                                    <constraint firstItem="io9-4d-NS3" firstAttribute="leading" secondItem="SN8-3x-TE2" secondAttribute="leading" id="hOA-Jm-nui"/>
+                                    <constraint firstAttribute="trailing" secondItem="io9-4d-NS3" secondAttribute="trailing" id="xdu-f6-B0C"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SN8-3x-TE2" firstAttribute="leading" secondItem="asV-DR-O4j" secondAttribute="leading" id="16W-gB-nNl"/>
+                            <constraint firstItem="SN8-3x-TE2" firstAttribute="top" secondItem="asV-DR-O4j" secondAttribute="top" id="7tR-3F-Otl"/>
+                            <constraint firstItem="asV-DR-O4j" firstAttribute="trailing" secondItem="SN8-3x-TE2" secondAttribute="trailing" id="qHx-40-Fk0"/>
+                            <constraint firstItem="asV-DR-O4j" firstAttribute="bottom" secondItem="SN8-3x-TE2" secondAttribute="bottom" id="wel-Vw-PpJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="asV-DR-O4j"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dRv-qh-gPW"/>
+                    <connections>
+                        <outlet property="tblView" destination="io9-4d-NS3" id="Esj-Cv-PYE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OyM-bp-hcK" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5500" y="116"/>
+        </scene>
+        <!--Submit ReportVC-->
+        <scene sceneID="OIs-ax-yq9">
+            <objects>
+                <viewController restorationIdentifier="SubmitReportVC" storyboardIdentifier="SubmitReportVC" id="E53-e4-P4C" customClass="SubmitReportVC" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Je-wS-Swk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IS-1s-rub" customClass="floatText" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
+                                <rect key="frame" x="20" y="40" width="335" height="50"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.89411764709999997" green="0.18039215689999999" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BRr-Yq-HXd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="expandsOnOverflow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="FULL NAME"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGL-e6-7S4" customClass="floatText" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
+                                <rect key="frame" x="20" y="110" width="335" height="50"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.89411764709999997" green="0.18039215689999999" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vx5-55-xZ7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="expandsOnOverflow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="EMAIL"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lg-c6-uqf" customClass="floatText" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
+                                <rect key="frame" x="20" y="180" width="335" height="150"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.89411764709999997" green="0.18039215689999999" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="SCJ-Y4-LK1"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="expandsOnOverflow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="MESSAGE"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kso-8a-U2H" customClass="roundButtonHome" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
+                                <rect key="frame" x="155.5" y="583" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="PCb-bX-cte"/>
+                                    <constraint firstAttribute="height" constant="64" id="aAb-ra-5bN"/>
+                                </constraints>
+                                <state key="normal" image="ic_done_24_filled"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="N8U-Tn-UhE" firstAttribute="trailing" secondItem="VGL-e6-7S4" secondAttribute="trailing" constant="20" id="05U-WJ-vFn"/>
+                            <constraint firstItem="7lg-c6-uqf" firstAttribute="leading" secondItem="N8U-Tn-UhE" secondAttribute="leading" constant="20" id="24b-wI-Pl0"/>
+                            <constraint firstItem="N8U-Tn-UhE" firstAttribute="bottom" secondItem="kso-8a-U2H" secondAttribute="bottom" constant="20" id="5nc-g9-g2i"/>
+                            <constraint firstItem="6IS-1s-rub" firstAttribute="leading" secondItem="N8U-Tn-UhE" secondAttribute="leading" constant="20" id="9gv-Bx-jLz"/>
+                            <constraint firstItem="VGL-e6-7S4" firstAttribute="leading" secondItem="N8U-Tn-UhE" secondAttribute="leading" constant="20" id="C1H-B9-97N"/>
+                            <constraint firstItem="6IS-1s-rub" firstAttribute="top" secondItem="N8U-Tn-UhE" secondAttribute="top" constant="20" id="MzZ-AA-d6i"/>
+                            <constraint firstItem="VGL-e6-7S4" firstAttribute="top" secondItem="6IS-1s-rub" secondAttribute="bottom" constant="20" id="Qx2-l2-vYm"/>
+                            <constraint firstItem="7lg-c6-uqf" firstAttribute="top" secondItem="VGL-e6-7S4" secondAttribute="bottom" constant="20" id="XvZ-C5-gNo"/>
+                            <constraint firstItem="N8U-Tn-UhE" firstAttribute="trailing" secondItem="7lg-c6-uqf" secondAttribute="trailing" constant="20" id="ZAb-D4-GaT"/>
+                            <constraint firstItem="N8U-Tn-UhE" firstAttribute="trailing" secondItem="6IS-1s-rub" secondAttribute="trailing" constant="20" id="cPv-vX-k1w"/>
+                            <constraint firstItem="kso-8a-U2H" firstAttribute="centerX" secondItem="0Je-wS-Swk" secondAttribute="centerX" id="sxW-I6-ViO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N8U-Tn-UhE"/>
+                    </view>
+                    <connections>
+                        <outlet property="Message" destination="7lg-c6-uqf" id="LuC-kB-J5C"/>
+                        <outlet property="btnSubmit" destination="kso-8a-U2H" id="Nx8-gU-LCG"/>
+                        <outlet property="email" destination="VGL-e6-7S4" id="KyU-Vp-bP6"/>
+                        <outlet property="fullName" destination="6IS-1s-rub" id="fab-Qq-SuB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9P4-XZ-JWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6156" y="116"/>
+        </scene>
+        <!--Home ViewVC-->
+        <scene sceneID="LjB-N7-0UK">
+            <objects>
+                <viewController restorationIdentifier="HomeViewVC" storyboardIdentifier="HomeViewVC" id="sLd-Eh-FeF" customClass="HomeViewVC" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d14-sN-cPn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3h-Kn-UFt">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRO-ji-shl" customClass="roundButton" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
+                                        <rect key="frame" x="155.5" y="563" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="NTs-EC-7zk"/>
+                                            <constraint firstAttribute="width" constant="64" id="lyk-qA-Eys"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_done_24_filled"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="XRO-ji-shl" firstAttribute="centerX" secondItem="I3h-Kn-UFt" secondAttribute="centerX" id="Tju-yB-buB"/>
+                                    <constraint firstAttribute="bottom" secondItem="XRO-ji-shl" secondAttribute="bottom" constant="20" id="rV8-Sy-tyX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9B8-C9-NJ6" firstAttribute="bottom" secondItem="I3h-Kn-UFt" secondAttribute="bottom" id="3iC-4J-moq"/>
+                            <constraint firstItem="I3h-Kn-UFt" firstAttribute="leading" secondItem="9B8-C9-NJ6" secondAttribute="leading" id="8xZ-ef-IyF"/>
+                            <constraint firstItem="I3h-Kn-UFt" firstAttribute="top" secondItem="9B8-C9-NJ6" secondAttribute="top" id="TTi-GL-iAP"/>
+                            <constraint firstItem="9B8-C9-NJ6" firstAttribute="trailing" secondItem="I3h-Kn-UFt" secondAttribute="trailing" id="ik0-Di-fMY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9B8-C9-NJ6"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kit-f6-TYt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vYb-9t-rjY" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4844" y="116"/>
         </scene>
     </scenes>
     <resources>

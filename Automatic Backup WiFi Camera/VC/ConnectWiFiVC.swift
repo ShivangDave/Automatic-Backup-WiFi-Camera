@@ -114,6 +114,7 @@ class ConnectWiFiVC: UIViewController
     
     func showButton()
     {
+        #if !arch(i386) && !arch(x86_64)
         if !connect
         {
             self.btnNext.isHidden = true
@@ -121,10 +122,11 @@ class ConnectWiFiVC: UIViewController
         }
         else
         {
-            Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (_) in
+            Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (_) in
                 self.sendReq()
             }
         }
+        #endif
     }
     
     func sendReq()
@@ -151,6 +153,7 @@ class ConnectWiFiVC: UIViewController
                     print(error.localizedDescription)
             }
         }
+        self.view.layoutIfNeeded()
     }
     
     override func viewWillAppear(_ animated: Bool)

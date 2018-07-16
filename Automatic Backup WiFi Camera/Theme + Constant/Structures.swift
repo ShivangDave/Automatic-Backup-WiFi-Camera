@@ -25,6 +25,7 @@ struct Theme
     static var primaryFontAlert: UIFont {return UIFont(name: "Rubik-Medium", size: 12.0)!}
     static var smallFont: UIFont {return UIFont(name: "Rubik-Regular", size: 17.0)!}
     static var buttonFont: UIFont {return UIFont(name: "Rubik-Regular", size: 20.0)!}
+    static var menuFont: UIFont {return UIFont(name: "Rubik-Medium", size: 14.0)!}
     static var italicFont: UIFont {return UIFont.italicSystemFont(ofSize: 12.0)}
 }
 

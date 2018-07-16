@@ -13,6 +13,9 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
 {
     @IBOutlet weak var navBar : tabbar!
     @IBOutlet weak var videoButton : roundButtonHome!
+    @IBOutlet weak var containerView : UIView!
+    
+    var currentVC : UIViewController?
 
     override func viewDidLoad()
     {
@@ -21,9 +24,16 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         changeBar("HOME")
     }
     
+    override func viewWillAppear(_ animated: Bool)
+    {
+        currentVC = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewVC")
+        setVC(currentVC!,0)
+    }
+    
     override func viewDidAppear(_ animated: Bool)
     {
-        showTips(videoButton, navBar,Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
+        self.navigationItem.backBarButtonItem?.tintColor = .white
+        //showTips(videoButton, navBar,Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
     }
     
     @IBAction func cameraClicked(_ sender : Any)
@@ -39,19 +49,56 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         switch item.tag
         {
         case 0:
-            //showTips(navBar, Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
+            setVC(mainStoryboard.instantiateViewController(withIdentifier: "HomeViewVC"),1)
             break
             
         case 1:
-            //showTips(navBar, Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
+            setVC(mainStoryboard.instantiateViewController(withIdentifier: "SettingsVC"),1)
+            
             break
         case 2:
-            
-            //showTips(navBar, Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
+            showTips(videoButton, navBar, Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
             break
         default:
             break
         }
     }
     
+    func setVC(_ vc : UIViewController, _ run : Int)
+    {
+        switch run
+        {
+            case 0:
+                currentVC = vc
+                self.addChild(vc)
+                setViewSize(vc)
+                break
+            case 1:
+                if currentVC!.restorationIdentifier != vc.restorationIdentifier
+                {
+                    removeVC(currentVC!)
+                    currentVC = vc
+                    self.addChild(vc)
+                    setViewSize(vc)
+                }
+                break
+            default:
+                break
+        }
+    }
+    
+    func setViewSize(_ vc: UIViewController)
+    {
+        containerView.addSubview(vc.view)
+        vc.view.frame = containerView.bounds
+        vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        vc.didMove(toParent: self)
+    }
+    
+    func removeVC(_ vc : UIViewController)
+    {
+        vc.willMove(toParent: nil)
+        vc.view.removeFromSuperview()
+        vc.removeFromParent()
+    }
 }
