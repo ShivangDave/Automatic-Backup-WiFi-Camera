@@ -37,8 +37,10 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         //showSnack("\(indexPath.row)")
-        tblView.deselectRow(at: indexPath, animated: true)
+        
         let vc = mainStoryboard.instantiateViewController(withIdentifier: "SubmitReportVC") as! SubmitReportVC
+        vc.topTitle = options[indexPath.row]
+        tblView.deselectRow(at: indexPath, animated: true)
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

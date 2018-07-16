@@ -17,13 +17,18 @@ class SubmitReportVC: UIViewController, UITextViewDelegate
     @IBOutlet weak var btnSubmit : roundButtonHome!
     
     var controller : MDCTextInputControllerUnderline?
+    var topTitle = ""
     
     @IBAction func btnSuccessClicked(_ sender: roundButtonHome)
     {
         if validation()
         {
-            showSnack("Message sent successfully!")
+            showSnack("Message sent successfully.")
             self.navigationController?.popViewController(animated: true)
+        }
+        else
+        {
+            showSnack("Please make sure fields aren't empty!")
         }
     }
     
@@ -41,7 +46,7 @@ class SubmitReportVC: UIViewController, UITextViewDelegate
     {
         super.viewDidLoad()
         
-        self.navigationItem.title = "CONTACT US"
+        self.navigationItem.title = topTitle
         
         hideKeyboardWhenTappedAround()
         
