@@ -22,7 +22,8 @@ class SubmitReportVC: UIViewController, UITextViewDelegate
     {
         if validation()
         {
-            
+            showSnack("Message sent successfully!")
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
