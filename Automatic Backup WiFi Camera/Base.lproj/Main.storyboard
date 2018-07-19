@@ -45,7 +45,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mZ-0S-nzb" customClass="cardView" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
                                         <rect key="frame" x="30" y="40" width="315" height="459"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_small.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7Ox-ed-2h4">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Ox-ed-2h4">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="313"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify Video Feed." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSg-TT-AnP" customClass="headerLabel" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
@@ -139,6 +139,7 @@
                         <outlet property="animatedScroll" destination="sSN-sp-mFZ" id="GgR-Zy-gXO"/>
                         <outlet property="cardBackView" destination="4mZ-0S-nzb" id="GTx-SR-qJr"/>
                         <outlet property="cardView" destination="L7K-sL-tP4" id="FDB-tk-tlm"/>
+                        <outlet property="imgView" destination="7Ox-ed-2h4" id="2KH-Pt-f4L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dE3-r4-6Nw" sceneMemberID="firstResponder"/>
