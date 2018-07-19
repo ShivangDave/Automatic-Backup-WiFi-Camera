@@ -52,7 +52,7 @@ class CameraVC: UIViewController
         cardView.addTarget(self, action: #selector(nextVC(_:)), for: .touchUpInside)
         changeBar("CAMERA TEST")
         
-        imgView.transform = imgView.transform.rotated(by: -.pi/2)
+        //imgView.transform = imgView.transform.rotated(by: -.pi/2)
         streamingController = MjpegStreamingController(imageView: imgView)
         streamingController!.play(url: url! as URL)
     }

@@ -353,17 +353,40 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZA-O8-1Hm">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfg-5c-Vud">
+                                <rect key="frame" x="20" y="253.5" width="335" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="h6O-wO-xIE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8Wd-RY-ZXh" firstAttribute="top" secondItem="igO-u7-hpv" secondAttribute="top" id="1xP-bf-Fsh"/>
+                            <constraint firstItem="nfg-5c-Vud" firstAttribute="centerY" secondItem="57X-H7-gDw" secondAttribute="centerY" id="8M6-gb-kvp"/>
+                            <constraint firstItem="nfg-5c-Vud" firstAttribute="leading" secondItem="igO-u7-hpv" secondAttribute="leading" constant="20" id="DKv-Es-EeG"/>
+                            <constraint firstItem="nfg-5c-Vud" firstAttribute="centerX" secondItem="57X-H7-gDw" secondAttribute="centerX" id="Dcy-cn-B6N"/>
+                            <constraint firstItem="aZA-O8-1Hm" firstAttribute="leading" secondItem="igO-u7-hpv" secondAttribute="leading" id="GuI-4g-Ueb"/>
                             <constraint firstItem="igO-u7-hpv" firstAttribute="trailing" secondItem="8Wd-RY-ZXh" secondAttribute="trailing" id="OPz-v4-3Gr"/>
+                            <constraint firstItem="aZA-O8-1Hm" firstAttribute="top" secondItem="igO-u7-hpv" secondAttribute="top" id="QeL-iA-vy7"/>
+                            <constraint firstItem="igO-u7-hpv" firstAttribute="bottom" secondItem="aZA-O8-1Hm" secondAttribute="bottom" id="ceI-tJ-XeS"/>
+                            <constraint firstItem="igO-u7-hpv" firstAttribute="trailing" secondItem="aZA-O8-1Hm" secondAttribute="trailing" id="dQJ-JK-eb5"/>
                             <constraint firstItem="igO-u7-hpv" firstAttribute="bottom" secondItem="8Wd-RY-ZXh" secondAttribute="bottom" id="dwO-Xc-En1"/>
                             <constraint firstItem="8Wd-RY-ZXh" firstAttribute="leading" secondItem="igO-u7-hpv" secondAttribute="leading" id="hC8-J1-uAh"/>
+                            <constraint firstItem="igO-u7-hpv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nfg-5c-Vud" secondAttribute="trailing" constant="20" id="y48-hi-42f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="igO-u7-hpv"/>
                     </view>
                     <connections>
+                        <outlet property="alertLabel" destination="nfg-5c-Vud" id="79L-mb-lUj"/>
+                        <outlet property="alertView" destination="aZA-O8-1Hm" id="coE-tE-fd4"/>
                         <outlet property="imgView" destination="8Wd-RY-ZXh" id="d1q-Jk-DNs"/>
                     </connections>
                 </viewController>

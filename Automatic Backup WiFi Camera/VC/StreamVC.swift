@@ -11,6 +11,8 @@ import UIKit
 class StreamVC: UIViewController {
 
     @IBOutlet weak var imgView : UIImageView!
+    @IBOutlet weak var alertView : UIView!
+    @IBOutlet weak var alertLabel : UILabel!
     
     let url = NSURL(string: "http://10.3.141.1:3000/start")
     var streamingController : MjpegStreamingController?
@@ -19,19 +21,29 @@ class StreamVC: UIViewController {
     {
         super.viewDidLoad()
         
-        imgView.transform = imgView.transform.rotated(by: -.pi/2)
         streamingController = MjpegStreamingController(imageView: imgView)
         streamingController!.play(url: url! as URL)
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        alertLabel.font = Theme.primaryFont
+        alertLabel.textColor = Theme.primaryColor
+        alertLabel.lineBreakMode = .byWordWrapping
+        alertLabel.numberOfLines = 0
+        alertLabel.text = "Change the orientation to landscape to continue."
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape
         {
-            imgView.transform = imgView.transform.rotated(by: .pi/2)
+            alertLabel.isHidden = true
+            alertView.isHidden = true
         }
         else
         {
-            imgView.transform = imgView.transform.rotated(by: -.pi/2)
+            alertLabel.isHidden = false
+            alertView.isHidden = false
         }
     }
     

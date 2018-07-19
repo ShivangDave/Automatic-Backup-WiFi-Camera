@@ -28,6 +28,12 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
     {
         currentVC = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewVC")
         setVC(currentVC!,0)
+        
+        if let noti = lastNote
+        {
+            let cat = noti["category"] as! Int
+            showSnack("\(cat)")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool)

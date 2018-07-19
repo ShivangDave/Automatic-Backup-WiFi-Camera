@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "69827EB420FD4FC00082E124"
+               BlueprintIdentifier = "69827F2D20FD59FB0082E124"
                BuildableName = "Automatic Backup WiFi CameraTests.xctest"
                BlueprintName = "Automatic Backup WiFi CameraTests"
                ReferencedContainer = "container:Automatic Backup WiFi Camera.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "69827EC220FD4FCF0082E124"
+               BlueprintIdentifier = "69827F1D20FD59D80082E124"
                BuildableName = "Automatic Backup WiFi CameraUITests.xctest"
                BlueprintName = "Automatic Backup WiFi CameraUITests"
                ReferencedContainer = "container:Automatic Backup WiFi Camera.xcodeproj">
@@ -65,7 +65,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      launchStyle = "0"
+      launchStyle = "1"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
