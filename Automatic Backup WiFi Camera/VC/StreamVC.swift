@@ -17,7 +17,7 @@ class StreamVC: UIViewController {
         super.viewDidLoad()
         
         let streamingController = MjpegStreamingController(imageView: imgView)
-        let url = NSURL(string: "http://10.3.141.1:8000/")
+        let url = NSURL(string: "http://10.3.141.1:3000/start")
         streamingController.play(url: url! as URL)
     }
 
