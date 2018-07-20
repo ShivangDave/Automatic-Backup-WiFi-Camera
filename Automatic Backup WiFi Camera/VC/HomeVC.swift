@@ -24,22 +24,63 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         changeBar("HOME")
     }
     
+    @objc func startStream(_ notification:Notification)
+    {
+        showAlert()
+    }
+    
     override func viewWillAppear(_ animated: Bool)
     {
+        self.navigationItem.backBarButtonItem?.tintColor = .white
+        
         currentVC = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewVC")
         setVC(currentVC!,0)
+        NotificationCenter.default.addObserver(self, selector: #selector(startStream(_:)), name: .startStream, object: nil)
         
+        if nLaunch
+        {
+            streamSetup()
+        }
+        
+    }
+    
+    func streamSetup()
+    {
         if let noti = lastNote
         {
             let cat = noti["category"] as! Int
-            showSnack("\(cat)")
+            
+            switch cat
+            {
+                case 0:
+                    //showAlert()
+                    let vc = mainStoryboard.instantiateViewController(withIdentifier: "StreamVC") as! StreamVC
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    break
+                case 1:
+                    showSnack("No active stream found!")
+                    break
+                default:
+                    break
+            }
         }
     }
     
-    override func viewDidAppear(_ animated: Bool)
+    func showAlert()
     {
-        self.navigationItem.backBarButtonItem?.tintColor = .white
-        //showTips(videoButton, navBar,Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
+        let alert = UIAlertController(title: "Confirm", message: "Do you want to start the video?", preferredStyle: .alert)
+        let yes = UIAlertAction(title: "Yes", style: .default) { (action) in
+            let vc = mainStoryboard.instantiateViewController(withIdentifier: "StreamVC") as! StreamVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        let no = UIAlertAction(title: "No", style: .cancel) { (action) in
+            alert.dismiss(animated: true, completion: {
+                self.showSnack("Stream cancelled!")
+            })
+        }
+        alert.addAction(yes)
+        alert.addAction(no)
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func cameraClicked(_ sender : Any)
@@ -56,14 +97,15 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         {
         case 0:
             setVC(mainStoryboard.instantiateViewController(withIdentifier: "HomeViewVC"),1)
+            changeBar("HOME")
             break
             
         case 1:
             setVC(mainStoryboard.instantiateViewController(withIdentifier: "SettingsVC"),1)
-            
+            changeBar("SETTINGS")
             break
         case 2:
-            showTips(videoButton, navBar, Theme.accentColor, "Just how you want it", "Tap the menu button to switch accounts, change settings & more.")
+            showTips(navBar, videoButton, Theme.accentColor, "MENU OPTIONS", "Tap on the menu buttons to switch between Home, Settings & Tips.", "VIDEO FEED", "Tap on this button to trigger video feed manually.")
             break
         default:
             break

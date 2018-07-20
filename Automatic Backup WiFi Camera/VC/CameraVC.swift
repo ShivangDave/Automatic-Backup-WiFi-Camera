@@ -17,7 +17,7 @@ class CameraVC: UIViewController
     @IBOutlet weak var cardView : cardView!
     @IBOutlet weak var imgView : UIImageView!
     
-    let url = NSURL(string: "http://10.3.141.1:3000/start")
+    let url = NSURL(string: API_URL.start)
     var streamingController : MjpegStreamingController?
     
     override func viewDidLoad()
@@ -52,7 +52,6 @@ class CameraVC: UIViewController
         cardView.addTarget(self, action: #selector(nextVC(_:)), for: .touchUpInside)
         changeBar("CAMERA TEST")
         
-        //imgView.transform = imgView.transform.rotated(by: -.pi/2)
         streamingController = MjpegStreamingController(imageView: imgView)
         streamingController!.play(url: url! as URL)
     }

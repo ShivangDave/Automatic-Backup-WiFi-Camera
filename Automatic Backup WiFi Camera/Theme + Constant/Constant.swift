@@ -17,6 +17,28 @@ let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 var flag = true
 
+extension Notification.Name
+{
+    static let startStream = Notification.Name("startStream")
+    static let stopStream = Notification.Name("stopStream")
+}
+
+extension UIView
+{
+    func rotate(duration: CFTimeInterval=1.0, completionDelegate: AnyObject? = nil)
+    {
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotateAnimation.fromValue = 0.0
+        rotateAnimation.toValue = CGFloat.pi / 4.0
+        rotateAnimation.duration = duration
+        if let delegate: AnyObject = completionDelegate
+        {
+            rotateAnimation.delegate = delegate as? CAAnimationDelegate
+        }
+        self.layer.add(rotateAnimation, forKey: nil)
+    }
+}
+
 extension UIViewController
 {
     func currentSSIDs() -> [String]
@@ -35,17 +57,19 @@ extension UIViewController
         }
     }
     
-    func showTips(_ view: UIView, _ view2: UIView,_ color: UIColor,_ title: String,_ tip: String)
+    func showTips(_ view: UIView, _ view2: UIView,_ color: UIColor,_ title: String,_ tip: String,_ title2: String,_ tip2:String)
     {
         let highlightController = MDCFeatureHighlightViewController(highlightedView: view) { (_) in
             if flag
             {
-                self.showTips(view2, view, color, title, tip)
+                self.showTips(view2, view, color, title2, tip2, title, tip)
             }
             flag = false
         }
         highlightController.titleColor = UIColor.white
         highlightController.bodyColor = UIColor.white
+        highlightController.titleFont = Theme.primaryFont
+        highlightController.bodyFont = Theme.smallFont
         highlightController.titleText = title
         highlightController.bodyText = tip
         highlightController.outerHighlightColor =
@@ -86,17 +110,6 @@ extension UIViewController
         UIView.animate(withDuration: 3.0) {
             _ = self.navigationController?.pushViewController(dvc, animated: true)
         }
-
-//        let transition = CATransition()
-//        let materialCurve = MDCAnimationTimingFunction.deceleration
-//        let timingFunction = CAMediaTimingFunction.mdc_function(withType: materialCurve)
-//
-//        transition.duration = 3.0
-//
-//        transition.timingFunction = timingFunction
-//        transition.type = CATransitionType.push
-//        self.navigationController?.view.layer.add(transition, forKey: nil)
-        
     }
     
     func presentIt(_ vc : String)

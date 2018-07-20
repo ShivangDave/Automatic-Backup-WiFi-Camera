@@ -10,6 +10,15 @@ import Foundation
 import UIKit
 import MaterialComponents
 
+struct API_URL
+{
+    static let baseurl = "http://10.3.141.1:3000/"
+    static let token = baseurl + "connect"
+    static let start = baseurl + "start"
+    static let stop = baseurl + "stop"
+    static let getTotalClients = baseurl + "totalClients"
+}
+
 struct FlipTheme
 {
     static var primaryColor: UIColor  { return UIColor(red: 226.0/255, green: 46.0/255, blue: 106.0/255, alpha: 1.0) }

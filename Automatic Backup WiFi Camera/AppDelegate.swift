@@ -10,6 +10,7 @@ import UIKit
 import UserNotifications
 
 var lastNote : [String : AnyObject]?
+var nLaunch = false
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,22 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
             if let remoteNotification = launchOptions?[.remoteNotification] as?  [AnyHashable : Any]
             {
-                // Do what you want to happen when a remote notification is tapped.
                 lastNote = remoteNotification["aps"] as? [String:AnyObject]
-                
                 let vc = mainStoryboard.instantiateViewController(withIdentifier: "navigationController")
                 self.window?.rootViewController = vc
-                
-//                if lastNote!["category"] as! Int != 1
-//                {
-//                    let vc = mainStoryboard.instantiateViewController(withIdentifier: "navigationController")
-//                    self.window?.rootViewController = vc
-//                }
-//                else
-//                {
-//                    let vc = mainStoryboard.instantiateViewController(withIdentifier: "navigationController")
-//                    self.window?.rootViewController = vc
-//                }
+                nLaunch = true
             }
 
         }
@@ -49,12 +38,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
             if token != nil
             {
+                nLaunch = false
                 print(token ?? "")
                 let vc = mainStoryboard.instantiateViewController(withIdentifier: "navigationController")
                 self.window?.rootViewController = vc
             }
             else
             {
+                nLaunch = false
                 UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
                 application.registerForRemoteNotifications()
             }
@@ -73,7 +64,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void)
     {
         let aps = userInfo["aps"] as! [String : AnyObject]
-        print(aps)
+        if let cat = aps["category"] as? Int
+        {
+            switch cat
+            {
+                case 0:
+                    NotificationCenter.default.post(name: .startStream, object: nil)
+                    break
+                case 1:
+                    NotificationCenter.default.post(name: .stopStream, object: nil)
+                    break
+                default:
+                    break
+            }
+        }
     }
     
     func applicationWillResignActive(_ application: UIApplication)

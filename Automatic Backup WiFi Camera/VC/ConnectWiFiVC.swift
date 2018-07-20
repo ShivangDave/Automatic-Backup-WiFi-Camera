@@ -149,7 +149,7 @@ class ConnectWiFiVC: UIViewController
     {
         let data = ["token":appDelegate.token!]
         
-        Alamofire.request("http://10.3.141.1:3000/connect", method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: []) { (res) in
+        Alamofire.request(API_URL.token, method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: []) { (res) in
             switch res.result
             {
                 case .success(let json):
@@ -163,6 +163,7 @@ class ConnectWiFiVC: UIViewController
                 case .failure(let error):
                     self.registered = false
                     print(error.localizedDescription)
+                    self.sendReq()
             }
         }
     }
