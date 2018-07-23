@@ -41,6 +41,7 @@ class StreamVC: UIViewController {
     @objc func stopStream(_ notification:Notification)
     {
         streamingController!.stop()
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.popToRootViewController(animated: true)
         self.showSnack("Stream Finished!")
     }
