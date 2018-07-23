@@ -53,9 +53,7 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
             switch cat
             {
                 case 0:
-                    //showAlert()
-                    let vc = mainStoryboard.instantiateViewController(withIdentifier: "StreamVC") as! StreamVC
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    showAlert()
                     break
                 case 1:
                     showSnack("No active stream found!")
@@ -88,6 +86,12 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         if self.currentSSIDs().first == "Automatic Backup WiFi Camera"
         {
             pushIt("StreamVC")
+        }
+        else
+        {
+            #if arch(i386) || arch(x86_64)
+            pushIt("StreamVC")
+            #endif
         }
     }
     

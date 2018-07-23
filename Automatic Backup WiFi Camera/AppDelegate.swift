@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
         token = defaults.object(forKey:"token") as? String
+        UIApplication.shared.applicationIconBadgeNumber = 0
         
         if launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil
         {
