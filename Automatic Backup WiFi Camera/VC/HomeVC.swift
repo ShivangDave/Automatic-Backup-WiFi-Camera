@@ -8,6 +8,7 @@
 
 import UIKit
 import MaterialComponents.MaterialBottomNavigation
+import Alamofire
 
 class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
 {
@@ -41,7 +42,50 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         {
             streamSetup()
         }
+        checkToken()
+    }
+    
+    func sendReq()
+    {
+        let data = ["token":appDelegate.token!]
         
+        Alamofire.request(API_URL.token, method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: []) { (res) in
+            switch res.result
+            {
+                case .success(let json):
+                    let dic = json as! NSDictionary
+                    print(dic)
+                
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func checkToken()
+    {
+        Alamofire.request(API_URL.checkToken)
+            .responseJSON { response in
+                guard response.result.error == nil else {
+                    print(response.result.error!)
+                    return
+                }
+                guard let json = response.result.value as? [String: Any] else {
+                    if let error = response.result.error {
+                        print("Error: \(error)")
+                    }
+                    return
+                }
+                guard let todoTitle = json["token"] as? Bool else
+                {
+                    print("Could not get todo title from JSON")
+                    return
+                }
+                if !todoTitle
+                {
+                    self.sendReq()
+                }
+            }
     }
     
     func streamSetup()

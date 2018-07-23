@@ -17,6 +17,7 @@ struct API_URL
     static let start = baseurl + "start"
     static let stop = baseurl + "stop"
     static let getTotalClients = baseurl + "totalClients"
+    static let checkToken = baseurl + "checkToken"
 }
 
 struct FlipTheme
