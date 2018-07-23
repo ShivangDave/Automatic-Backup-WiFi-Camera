@@ -350,7 +350,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Wd-RY-ZXh">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -358,7 +358,7 @@
                                 </connections>
                             </imageView>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZA-O8-1Hm">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfg-5c-Vud">
@@ -378,21 +378,21 @@
                                 </constraints>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8Wd-RY-ZXh" firstAttribute="top" secondItem="igO-u7-hpv" secondAttribute="top" id="1xP-bf-Fsh"/>
-                            <constraint firstItem="aZA-O8-1Hm" firstAttribute="leading" secondItem="igO-u7-hpv" secondAttribute="leading" id="GuI-4g-Ueb"/>
+                            <constraint firstItem="aZA-O8-1Hm" firstAttribute="leading" secondItem="57X-H7-gDw" secondAttribute="leading" id="GuI-4g-Ueb"/>
                             <constraint firstItem="igO-u7-hpv" firstAttribute="trailing" secondItem="nfg-5c-Vud" secondAttribute="trailing" constant="20" id="Ix9-cU-g5D"/>
-                            <constraint firstItem="igO-u7-hpv" firstAttribute="trailing" secondItem="8Wd-RY-ZXh" secondAttribute="trailing" id="OPz-v4-3Gr"/>
-                            <constraint firstItem="aZA-O8-1Hm" firstAttribute="top" secondItem="igO-u7-hpv" secondAttribute="top" id="QeL-iA-vy7"/>
+                            <constraint firstAttribute="trailing" secondItem="8Wd-RY-ZXh" secondAttribute="trailing" id="OPz-v4-3Gr"/>
                             <constraint firstItem="xcO-19-ecE" firstAttribute="top" secondItem="nfg-5c-Vud" secondAttribute="bottom" id="YRt-j5-aI0"/>
                             <constraint firstItem="xcO-19-ecE" firstAttribute="centerX" secondItem="57X-H7-gDw" secondAttribute="centerX" id="ZnJ-gf-Jd0"/>
-                            <constraint firstItem="igO-u7-hpv" firstAttribute="bottom" secondItem="aZA-O8-1Hm" secondAttribute="bottom" id="ceI-tJ-XeS"/>
-                            <constraint firstItem="igO-u7-hpv" firstAttribute="trailing" secondItem="aZA-O8-1Hm" secondAttribute="trailing" id="dQJ-JK-eb5"/>
-                            <constraint firstItem="igO-u7-hpv" firstAttribute="bottom" secondItem="8Wd-RY-ZXh" secondAttribute="bottom" id="dwO-Xc-En1"/>
+                            <constraint firstAttribute="bottom" secondItem="aZA-O8-1Hm" secondAttribute="bottom" id="ceI-tJ-XeS"/>
+                            <constraint firstAttribute="trailing" secondItem="aZA-O8-1Hm" secondAttribute="trailing" id="dQJ-JK-eb5"/>
+                            <constraint firstAttribute="bottom" secondItem="8Wd-RY-ZXh" secondAttribute="bottom" id="dwO-Xc-En1"/>
                             <constraint firstItem="nfg-5c-Vud" firstAttribute="leading" secondItem="igO-u7-hpv" secondAttribute="leading" constant="20" id="gcD-MI-nqS"/>
-                            <constraint firstItem="8Wd-RY-ZXh" firstAttribute="leading" secondItem="igO-u7-hpv" secondAttribute="leading" id="hC8-J1-uAh"/>
+                            <constraint firstItem="8Wd-RY-ZXh" firstAttribute="leading" secondItem="57X-H7-gDw" secondAttribute="leading" id="hC8-J1-uAh"/>
                             <constraint firstItem="xcO-19-ecE" firstAttribute="centerY" secondItem="57X-H7-gDw" secondAttribute="centerY" id="lD2-7M-600"/>
+                            <constraint firstItem="8Wd-RY-ZXh" firstAttribute="top" secondItem="57X-H7-gDw" secondAttribute="top" id="lSH-wo-PW7"/>
+                            <constraint firstItem="aZA-O8-1Hm" firstAttribute="top" secondItem="57X-H7-gDw" secondAttribute="top" id="v9p-YQ-qNA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="igO-u7-hpv"/>
                     </view>
@@ -410,7 +410,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4145" y="811"/>
+            <point key="canvasLocation" x="4144.8000000000002" y="810.94452773613204"/>
         </scene>
         <!--WELCOME-->
         <scene sceneID="PbD-uh-gk1">

@@ -34,6 +34,7 @@ class StreamVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool)
     {
+        nLaunch = false
         streamingController!.stop()
     }
     
@@ -41,7 +42,6 @@ class StreamVC: UIViewController {
     {
         streamingController!.stop()
         self.navigationController?.popToRootViewController(animated: true)
-        nLaunch = false
         self.showSnack("Stream Finished!")
     }
     
