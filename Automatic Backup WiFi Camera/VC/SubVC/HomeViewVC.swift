@@ -7,10 +7,29 @@
 //
 
 import UIKit
+import AnimatedScrollView
 
-class HomeViewVC: UIViewController {
+class HomeViewVC: UIViewController
+{
+    
+    @IBOutlet weak var animatedScroll: AnimatedScrollView!
+    @IBOutlet weak var cardBackView : cardView!
+    @IBOutlet weak var cardView : cardView!
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
     }
+    
+    @objc func nextVC(_ sender: Any)
+    {
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        animatedScroll.animate(self.view, imageName: "background", animated: true)
+        animatedScroll.alpha = 0.3
+        cardView.addTarget(self, action: #selector(nextVC(_:)), for: .touchUpInside)
+    }
+
 }
