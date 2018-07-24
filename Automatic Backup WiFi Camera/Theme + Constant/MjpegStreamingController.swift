@@ -8,6 +8,7 @@
 
 import UIKit
 
+//MARK:- MJPEG STREAM CONTROLLER BASED ON UIIMAGEVIEW
 open class MjpegStreamingController: NSObject, URLSessionDataDelegate {
     
     fileprivate enum Status {
