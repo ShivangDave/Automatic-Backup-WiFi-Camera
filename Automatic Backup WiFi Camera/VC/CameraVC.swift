@@ -47,6 +47,8 @@ class CameraVC: UIViewController
     
     override func viewWillAppear(_ animated: Bool)
     {
+        AppUtility.lockOrientation(.portrait)
+        
         animatedScroll.animate(self.view, imageName: "background", animated: true)
         animatedScroll.alpha = 0.3
         cardView.addTarget(self, action: #selector(nextVC(_:)), for: .touchUpInside)

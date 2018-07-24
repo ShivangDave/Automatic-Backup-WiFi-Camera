@@ -30,10 +30,16 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         showAlert()
     }
     
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        AppUtility.lockOrientation(.all, andRotateTo: .portrait)
+    }
+    
     override func viewWillAppear(_ animated: Bool)
     {
-        self.navigationItem.backBarButtonItem?.tintColor = .white
+        AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         
+        self.navigationItem.backBarButtonItem?.tintColor = .white
         currentVC = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewVC")
         setVC(currentVC!,0)
         NotificationCenter.default.addObserver(self, selector: #selector(startStream(_:)), name: .startStream, object: nil)

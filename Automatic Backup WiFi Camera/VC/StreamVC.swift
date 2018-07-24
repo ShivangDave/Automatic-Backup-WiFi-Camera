@@ -27,6 +27,7 @@ class StreamVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool)
     {
+        AppUtility.lockOrientation(.all, andRotateTo: .landscapeRight)
         self.navigationItem.title = "STREAM"
         setAlert()
         play(imgView)

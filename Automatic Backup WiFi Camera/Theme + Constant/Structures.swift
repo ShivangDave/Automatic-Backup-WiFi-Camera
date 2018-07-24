@@ -10,6 +10,23 @@ import Foundation
 import UIKit
 import MaterialComponents
 
+struct AppUtility
+{
+    static func lockOrientation(_ orientation: UIInterfaceOrientationMask)
+    {
+        if let delegate = UIApplication.shared.delegate as? AppDelegate
+        {
+            delegate.orientationLock = orientation
+        }
+    }
+    
+    static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation: UIInterfaceOrientation)
+    {
+        self.lockOrientation(orientation)
+        UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
+    }
+}
+
 struct API_URL
 {
     static let baseurl = "http://10.3.141.1:3000/"
