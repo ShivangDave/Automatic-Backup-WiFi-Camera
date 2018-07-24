@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import MaterialComponents
 
+//MARK:- Structure for Device Orientations
 struct AppUtility
 {
     static func lockOrientation(_ orientation: UIInterfaceOrientationMask)
@@ -27,6 +28,7 @@ struct AppUtility
     }
 }
 
+//MARK:- Structure for API URL(s)
 struct API_URL
 {
     static let baseurl = "http://10.3.141.1:3000/"
@@ -37,12 +39,14 @@ struct API_URL
     static let checkToken = baseurl + "checkToken"
 }
 
+//MARK:- Flip the theme, changes primary color to accent
 struct FlipTheme
 {
     static var primaryColor: UIColor  { return UIColor(red: 226.0/255, green: 46.0/255, blue: 106.0/255, alpha: 1.0) }
     static var accentColor: UIColor  { return UIColor(red: 59.0/255, green: 77.0/255, blue: 159.0/255, alpha: 1.0) }
 }
 
+//MARK:- Primary theme engine
 struct Theme
 {
     static var primaryColor: UIColor  { return UIColor(red: 59.0/255, green: 77.0/255, blue: 159.0/255, alpha: 1.0) }
@@ -56,6 +60,7 @@ struct Theme
     static var italicFont: UIFont {return UIFont.italicSystemFont(ofSize: 12.0)}
 }
 
+//MARK:- Tabbar items
 struct tabItem
 {
     static var item1: UITabBarItem {return UITabBarItem(title: "Home", image: UIImage(named: "ic_home_24_filled"), tag: 0)}
