@@ -32,7 +32,5 @@ class HomeViewVC: UIViewController
     //MARK:- Reload background animator
     @objc func nextVC(_ sender: Any)
     {
-        animatedScroll.animate(self.view, imageName: "background", animated: true)
-        animatedScroll.alpha = 0.3
     }
 }
