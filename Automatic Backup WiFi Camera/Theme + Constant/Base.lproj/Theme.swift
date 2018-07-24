@@ -12,6 +12,7 @@ import MaterialComponents.MaterialCards
 import MaterialComponents.MDCMultilineTextField
 import AnimatedScrollView
 
+//MARK:- Floating textfield custom class
 class floatText: MDCMultilineTextField
 {
     override init(frame: CGRect)
@@ -31,6 +32,7 @@ class floatText: MDCMultilineTextField
     }
 }
 
+//MARK:- Bottom tabbar custom class
 class tabbar : MDCBottomNavigationBar
 {
     override init(frame: CGRect)
@@ -54,6 +56,7 @@ class tabbar : MDCBottomNavigationBar
     }
 }
 
+//MARK:- Round button with accent color
 class roundButton : MDCFloatingButton
 {
     
@@ -73,6 +76,7 @@ class roundButton : MDCFloatingButton
     }
 }
 
+//MARK:- Round button with primary color
 class roundButtonHome : MDCFloatingButton
 {
     
@@ -92,6 +96,7 @@ class roundButtonHome : MDCFloatingButton
     }
 }
 
+//MARK:- headerLabel custom class
 class headerLabel : UILabel
 {
     override init(frame: CGRect)
@@ -112,6 +117,7 @@ class headerLabel : UILabel
     }
 }
 
+//MARK:- middleLabel custom class
 class middleLabel : UILabel
 {
     override init(frame: CGRect)
@@ -132,6 +138,7 @@ class middleLabel : UILabel
     }
 }
 
+//MARK:- italicLabel custom class
 class italicLabel : UILabel
 {
     override init(frame: CGRect)
@@ -152,6 +159,7 @@ class italicLabel : UILabel
     }
 }
 
+//MARK:- navigationController base class
 class navigationController : UINavigationController
 {
     override init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?)
@@ -170,6 +178,7 @@ class navigationController : UINavigationController
     }
 }
 
+//MARK:- navigationController class
 class navigationController1 : UINavigationController
 {
     override init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?)
@@ -188,6 +197,7 @@ class navigationController1 : UINavigationController
     }
 }
 
+//MARK:- Custom navigationBar for HomeVC
 class navBarHome : UINavigationBar
 {
     override init(frame: CGRect)
@@ -207,6 +217,7 @@ class navBarHome : UINavigationBar
     }
 }
 
+//MARK:- Custom navigationBar for setup wizard
 class navBar : UINavigationBar
 {
     override init(frame: CGRect)
@@ -227,6 +238,7 @@ class navBar : UINavigationBar
     }
 }
 
+//MARK:- Card View Custom Class
 class cardView : MDCCard
 {
     override init(frame: CGRect)
