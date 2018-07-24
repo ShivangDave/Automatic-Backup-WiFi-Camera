@@ -14,10 +14,10 @@ import MaterialComponents.MaterialMaskedTransition
 
 class ConnectWiFiVC: UIViewController
 {
+    //MARK:- Outlets
     @IBOutlet weak var animatedScroll: AnimatedScrollView!
     @IBOutlet weak var cardBackView : cardView!
     @IBOutlet weak var cardView : cardView!
-    
     @IBOutlet weak var btnNext: roundButtonHome!
     @IBOutlet weak var bottomConst: NSLayoutConstraint!
     @IBOutlet weak var lblItalic: italicLabel!
@@ -25,30 +25,44 @@ class ConnectWiFiVC: UIViewController
     var connect = false
     var registered = false
     
+    //MARK:- UIView methods
     override func viewDidLoad()
     {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool)
+    {
+        AppUtility.lockOrientation(.portrait)
+        animatedScroll.animate(self.view, imageName: "background", animated: true)
+        animatedScroll.alpha = 0.3
+        cardView.addTarget(self, action: #selector(nextVC(_:)), for: .touchUpInside)
+        changeBar("CONNECT TO WiFi")
+        showButton()
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        _ = connectWifi()
+    }
+    
+    //MARK:- Move to the next VC
     @IBAction func btnSuccessClicked(_ sender: Any)
     {
         let vc = mainStoryboard.instantiateViewController(withIdentifier: "navigationController1")
         let transitionController = MDCMaskedTransitionController(sourceView: sender as! roundButtonHome)
-        
         vc.modalPresentationStyle = .custom
         vc.transitioningDelegate = transitionController
-        
         present(vc, animated: true)
     }
     
+    //MARK:- Connect to WiFi
     func connectWifi()->Bool
     {
         let ssid = "Automatic Backup WiFi Camera"
         let password = "ChangeMe"
         
-//        let ssid = "Get your own WiFi"
-//        let password = "follow1969coast"
-        
+        //MARK:- Only run this code if its not a simulator
         #if !arch(i386) && !arch(x86_64)
         let config = NEHotspotConfiguration(ssid: ssid, passphrase: password, isWEP: false)
         
@@ -92,6 +106,7 @@ class ConnectWiFiVC: UIViewController
         return self.connect
     }
     
+    //MARK:- CardView method / Retry connection if not connected.
     @objc func nextVC(_ sender: Any)
     {
         if connect && registered
@@ -106,11 +121,7 @@ class ConnectWiFiVC: UIViewController
         }
     }
     
-    override func viewDidAppear(_ animated: Bool)
-    {
-        _ = connectWifi()
-    }
-    
+    //MARK:- Button animation constraint changes
     func buttonAnimation()
     {
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false)
@@ -124,6 +135,7 @@ class ConnectWiFiVC: UIViewController
         }
     }
     
+    //MARK:- Unhide button with animation
     func showButton()
     {
         if !connect
@@ -145,10 +157,11 @@ class ConnectWiFiVC: UIViewController
         }
     }
     
+    //MARK:- Send token API call
     func sendReq()
     {
         let data = ["token":appDelegate.token!]
-        
+        startAnimating(activityIndicator)
         Alamofire.request(API_URL.token, method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: []) { (res) in
             switch res.result
             {
@@ -157,24 +170,15 @@ class ConnectWiFiVC: UIViewController
                     let code = dic.value(forKey: "response") as! String
                     print(code)
                     self.registered = true
-                    
                     self.buttonAnimation()
+                    self.stopAnimating(activityIndicator)
                 
                 case .failure(let error):
                     self.registered = false
                     print(error.localizedDescription)
+                    self.stopAnimating(activityIndicator)
                     self.sendReq()
             }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool)
-    {
-        AppUtility.lockOrientation(.portrait)
-        animatedScroll.animate(self.view, imageName: "background", animated: true)
-        animatedScroll.alpha = 0.3
-        cardView.addTarget(self, action: #selector(nextVC(_:)), for: .touchUpInside)
-        changeBar("CONNECT TO WiFi")
-        showButton()
     }
 }

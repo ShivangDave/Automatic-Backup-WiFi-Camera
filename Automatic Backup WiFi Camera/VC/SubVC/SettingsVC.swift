@@ -10,17 +10,19 @@ import UIKit
 
 class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-
+    //MARK:- Outlets
     @IBOutlet weak var tblView : UITableView!
-    
     let options = ["HELP","CONTACT US"]
     
+    //MARK:- UIView methods
     override func viewDidLoad()
     {
         super.viewDidLoad()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //MARK:- TableView Delegate and Datasource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         return options.count
     }
     

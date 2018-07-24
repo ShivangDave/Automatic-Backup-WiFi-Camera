@@ -12,32 +12,16 @@ import MaterialComponents.MaterialMaskedTransition
 
 class WelcomeVC: UIViewController
 {
+    //MARK:- Outlets
     @IBOutlet weak var animatedScroll: AnimatedScrollView!
     @IBOutlet weak var cardBackView : cardView!
     @IBOutlet weak var cardView : cardView!
-    
     @IBOutlet weak var btnSuccess : roundButton!
     
+    //MARK:- UIView methods
     override func viewDidLoad()
     {
         super.viewDidLoad()
-    }
-    
-    @IBAction func btnSuccessClicked(_ sender: Any)
-    {
-        let vc = mainStoryboard.instantiateViewController(withIdentifier: "navigationController0")
-        let transitionController = MDCMaskedTransitionController(sourceView: btnSuccess)
-        
-        vc.modalPresentationStyle = .custom
-        vc.transitioningDelegate = transitionController
-        
-        present(vc, animated: true)
-        
-    }
-    
-    @objc func nextVC(_ sender: Any)
-    {
-        //pushIt("ConnectWiFiVC")
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -46,6 +30,21 @@ class WelcomeVC: UIViewController
         animatedScroll.animate(self.view, imageName: "background", animated: true)
         animatedScroll.alpha = 0.3
         cardView.addTarget(self, action: #selector(nextVC(_:)), for: .touchUpInside)
+    }
+    
+    //MARK:- Move to next view
+    @IBAction func btnSuccessClicked(_ sender: Any)
+    {
+        let vc = mainStoryboard.instantiateViewController(withIdentifier: "navigationController0")
+        let transitionController = MDCMaskedTransitionController(sourceView: btnSuccess)
+        vc.modalPresentationStyle = .custom
+        vc.transitioningDelegate = transitionController
+        present(vc, animated: true)
+    }
+    
+    //MARK:- Optional method for cardview interaction
+    @objc func nextVC(_ sender: Any)
+    {
     }
 }
 

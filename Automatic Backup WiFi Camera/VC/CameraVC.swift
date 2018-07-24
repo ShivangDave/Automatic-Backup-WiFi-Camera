@@ -12,6 +12,7 @@ import MaterialComponents
 
 class CameraVC: UIViewController
 {
+    //MARK:- Outlets
     @IBOutlet weak var animatedScroll: AnimatedScrollView!
     @IBOutlet weak var cardBackView : cardView!
     @IBOutlet weak var cardView : cardView!
@@ -20,29 +21,10 @@ class CameraVC: UIViewController
     let url = NSURL(string: API_URL.start)
     var streamingController : MjpegStreamingController?
     
+    //MARK:- UIView methods
     override func viewDidLoad()
     {
         super.viewDidLoad()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool)
-    {
-        streamingController!.stop()
-    }
-    
-    @IBAction func btnSuccessClicked(_ sender: Any)
-    {
-        let vc = mainStoryboard.instantiateViewController(withIdentifier: "navigationController") as! navigationController
-        let transitionController = MDCMaskedTransitionController(sourceView: sender as! roundButton)
-        vc.modalPresentationStyle = .custom
-        vc.transitioningDelegate = transitionController
-        present(vc, animated: true)
-        
-    }
-    
-    @objc func nextVC(_ sender: Any)
-    {
-        //print("In CameraVC")
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -56,5 +38,25 @@ class CameraVC: UIViewController
         
         streamingController = MjpegStreamingController(imageView: imgView)
         streamingController!.play(url: url! as URL)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        streamingController!.stop()
+    }
+    
+    //MARK:- Move to next VC
+    @IBAction func btnSuccessClicked(_ sender: Any)
+    {
+        let vc = mainStoryboard.instantiateViewController(withIdentifier: "navigationController") as! navigationController
+        let transitionController = MDCMaskedTransitionController(sourceView: sender as! roundButton)
+        vc.modalPresentationStyle = .custom
+        vc.transitioningDelegate = transitionController
+        present(vc, animated: true)
+    }
+    
+    //MARK:- Optional cardView tap method
+    @objc func nextVC(_ sender: Any)
+    {
     }
 }

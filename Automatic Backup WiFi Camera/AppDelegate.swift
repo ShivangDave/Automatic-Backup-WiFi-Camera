@@ -22,9 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
+        //MARK:- Store and access token
         token = defaults.object(forKey:"token") as? String
+        
+        //MARK:- Reset badge count on launch
         UIApplication.shared.applicationIconBadgeNumber = 0
         
+        //MARK:- Check for launch options
         if launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil
         {
             if let remoteNotification = launchOptions?[.remoteNotification] as?  [AnyHashable : Any]
@@ -56,11 +60,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    //MARK:- Change supported Orientations throughout the app
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask
     {
         return self.orientationLock
     }
     
+    //MARK:- Register for remote notifications
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data)
     {
         token = deviceToken.hexString
@@ -68,6 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(token!)
     }
 
+    //MARK:- Receive remote notifications and post local notifications
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void)
     {
         let aps = userInfo["aps"] as! [String : AnyObject]
@@ -87,6 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    //MARK:- Unused App States
     func applicationWillResignActive(_ application: UIApplication)
     {
         

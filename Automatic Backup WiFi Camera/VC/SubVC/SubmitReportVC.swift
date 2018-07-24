@@ -11,6 +11,7 @@ import MaterialComponents.MDCMultilineTextField
 
 class SubmitReportVC: UIViewController, UITextViewDelegate
 {
+    //MARK:- Outlets
     @IBOutlet weak var fullName : floatText!
     @IBOutlet weak var email : floatText!
     @IBOutlet weak var Message : floatText!
@@ -19,6 +20,7 @@ class SubmitReportVC: UIViewController, UITextViewDelegate
     var controller : MDCTextInputControllerUnderline?
     var topTitle = ""
     
+    //MARK:- Show message and Move to parent VC
     @IBAction func btnSuccessClicked(_ sender: roundButtonHome)
     {
         if validation()
@@ -32,6 +34,7 @@ class SubmitReportVC: UIViewController, UITextViewDelegate
         }
     }
     
+    //MARK:- Validate textfields & check if they are empty or not
     func validation()->Bool
     {
         var success = false
@@ -42,6 +45,7 @@ class SubmitReportVC: UIViewController, UITextViewDelegate
         return success
     }
     
+    //MARK:- UIView methods
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -59,6 +63,7 @@ class SubmitReportVC: UIViewController, UITextViewDelegate
         Message.textView?.delegate = self
     }
     
+    //MARK:- UITextView Delegate method
     func textViewDidBeginEditing(_ textView: UITextView)
     {
         switch textView.tag

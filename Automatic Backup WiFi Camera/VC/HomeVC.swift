@@ -12,22 +12,18 @@ import Alamofire
 
 class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
 {
+    //MARK:- Outlets
     @IBOutlet weak var navBar : tabbar!
     @IBOutlet weak var videoButton : roundButtonHome!
     @IBOutlet weak var containerView : UIView!
-    
     var currentVC : UIViewController?
 
+    //MARK:- UIView methods
     override func viewDidLoad()
     {
         super.viewDidLoad()
         navBar.delegate = self
         changeBar("HOME")
-    }
-    
-    @objc func startStream(_ notification:Notification)
-    {
-        showAlert()
     }
     
     override func viewWillDisappear(_ animated: Bool)
@@ -51,6 +47,13 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         checkToken()
     }
     
+    //MARK:- Start stream function call via notification
+    @objc func startStream(_ notification:Notification)
+    {
+        showAlert()
+    }
+    
+    //MARK:- send token if its not on the server
     func sendReq()
     {
         let data = ["token":appDelegate.token!]
@@ -68,6 +71,7 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         }
     }
     
+    //MARK:- check for stored token on the server
     func checkToken()
     {
         Alamofire.request(API_URL.checkToken)
@@ -94,6 +98,7 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
             }
     }
     
+    //MARK:- check for last received notification type
     func streamSetup()
     {
         if let noti = lastNote
@@ -114,6 +119,7 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         }
     }
     
+    //MARK:- Ask for user permission to launch the stream
     func showAlert()
     {
         let alert = UIAlertController(title: "Confirm", message: "Do you want to start the video?", preferredStyle: .alert)
@@ -131,6 +137,7 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         self.present(alert, animated: true, completion: nil)
     }
     
+    //MARK:- Launch camera stream manually
     @IBAction func cameraClicked(_ sender : Any)
     {
         if self.currentSSIDs().first == "Automatic Backup WiFi Camera"
@@ -145,6 +152,7 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         }
     }
     
+    //MARK:- Tabbar delegate
     func bottomNavigationBar(_ bottomNavigationBar: MDCBottomNavigationBar, didSelect item: UITabBarItem)
     {
         switch item.tag
@@ -166,6 +174,7 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         }
     }
     
+    //MARK:- Add / remove child VC from container view
     func setVC(_ vc : UIViewController, _ run : Int)
     {
         switch run
@@ -189,6 +198,7 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         }
     }
     
+    //MARK:- set view size inside container view
     func setViewSize(_ vc: UIViewController)
     {
         containerView.addSubview(vc.view)
@@ -197,6 +207,7 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         vc.didMove(toParent: self)
     }
     
+    //MARK:- navigate through VC on option selection
     func removeVC(_ vc : UIViewController)
     {
         vc.willMove(toParent: nil)

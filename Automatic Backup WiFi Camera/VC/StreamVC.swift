@@ -10,16 +10,18 @@ import UIKit
 
 class StreamVC: UIViewController {
 
+    //MARK:- Outlets
     @IBOutlet weak var imgView : UIImageView!
     @IBOutlet weak var alertView : UIView!
     @IBOutlet weak var alertLabel : UILabel!
     @IBOutlet weak var btnRotate : UIButton!
-    
+
     let url = NSURL(string: API_URL.start)
     var streamingController : MjpegStreamingController?
     var fullScreen = false
     var oldFrame: CGRect?
     
+    //MARK:- UIView methods
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -39,6 +41,7 @@ class StreamVC: UIViewController {
         streamingController!.stop()
     }
     
+    //MARK:- stop stream via remote notification
     @objc func stopStream(_ notification:Notification)
     {
         streamingController!.stop()
@@ -47,6 +50,7 @@ class StreamVC: UIViewController {
         self.showSnack("Stream Finished!")
     }
     
+    //MARK:- Show alert if device is in not in landscape orientation
     func setAlert()
     {
         if !UIDevice.current.orientation.isLandscape
@@ -72,6 +76,7 @@ class StreamVC: UIViewController {
         }
     }
     
+    //MARK:- Hide alert
     func hideAlert()
     {
         alertView.isHidden = true
@@ -79,6 +84,7 @@ class StreamVC: UIViewController {
         btnRotate.isHidden = true
     }
     
+    //MARK:- Check for change in orientation
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape
         {
@@ -90,6 +96,7 @@ class StreamVC: UIViewController {
         }
     }
     
+    //MARK:- Play function
     func play(_ imgView : UIImageView)
     {
         NotificationCenter.default.addObserver(self, selector: #selector(stopStream(_:)), name: .stopStream, object: nil)
@@ -97,6 +104,7 @@ class StreamVC: UIViewController {
         streamingController!.play(url: url! as URL)
     }
     
+    //MARK:- Gesture recognizer for UIImageView Full screen
     @IBAction func imageTapped(_ sender: UITapGestureRecognizer)
     {
         if !fullScreen
