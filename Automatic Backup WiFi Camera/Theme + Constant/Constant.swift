@@ -17,14 +17,18 @@ let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 var flag = true
 
+//MARK:- Local Notification Name Extension
 extension Notification.Name
 {
+    //MARK:- Add custom notification names
     static let startStream = Notification.Name("startStream")
     static let stopStream = Notification.Name("stopStream")
 }
 
+//MARK:- UIView Extension
 extension UIView
 {
+    //MARK:- Rotate device animation
     func rotate(duration: CFTimeInterval=1.0, completionDelegate: AnyObject? = nil)
     {
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
@@ -39,8 +43,10 @@ extension UIView
     }
 }
 
+//MARK:- UIViewController Extension
 extension UIViewController
 {
+    //MARK:- Returns connected WiFi SSIDs
     func currentSSIDs() -> [String]
     {
         guard let interfaceNames = CNCopySupportedInterfaces() as? [String] else {
@@ -57,6 +63,7 @@ extension UIViewController
         }
     }
     
+    //MARK:- TIPS animation using MDCFeatureHighlightViewController
     func showTips(_ view: UIView, _ view2: UIView,_ color: UIColor,_ title: String,_ tip: String,_ title2: String,_ tip2:String)
     {
         let highlightController = MDCFeatureHighlightViewController(highlightedView: view) { (_) in
@@ -77,12 +84,14 @@ extension UIViewController
         present(highlightController, animated: true, completion:nil)
     }
     
+    //MARK:- Changing NavBar header in setup wizard
     func changeBar(_ title: String)
     {
         self.navigationItem.hidesBackButton = true
         self.navigationItem.title = title
     }
     
+    //MARK:- Show snackbar with action button
     func showSnackButton(_ message: String, _ buttonTitle:String)
     {
         let message = MDCSnackbarMessage(text: message)
@@ -98,12 +107,14 @@ extension UIViewController
         MDCSnackbarManager.show(message)
     }
     
+    //MARK:- Show snack with string
     func showSnack(_ message: String)
     {
         let message = MDCSnackbarMessage(text: message)
         MDCSnackbarManager.show(message)
     }
     
+    //MARK:- common push view controller with delay
     func pushIt(_ vc: String)
     {
         let dvc = mainStoryboard.instantiateViewController(withIdentifier: vc)
@@ -112,6 +123,7 @@ extension UIViewController
         }
     }
     
+    //MARK:- common present view controller with delay & animation
     func presentIt(_ vc : String)
     {
         let dvc = mainStoryboard.instantiateViewController(withIdentifier: vc)
@@ -120,6 +132,7 @@ extension UIViewController
         present(dvc, animated: true, completion: nil)
     }
     
+    //MARK:- Start Activity Indicator
     func startAnimating(_ activityIndicator: MDCActivityIndicator)
     {
         let overlay = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
@@ -138,6 +151,7 @@ extension UIViewController
         activityIndicator.startAnimating()
     }
     
+    //MARK:- Stop Activity Indicator
     func stopAnimating(_ activityIndicator: MDCActivityIndicator)
     {
         self.view.viewWithTag(1)?.removeFromSuperview()
@@ -145,19 +159,23 @@ extension UIViewController
         activityIndicator.stopAnimating()
     }
     
+    //MARK:- Hide keyboard on screen tap
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
     
+    //MARK:- Hide keyboard on screen tap observer action
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
 }
 
+//MARK:- Data Extension
 extension Data
 {
+    //MARK:- Hex to String for token
     var hexString: String
     {
         let hexString = map { String(format: "%02.2hhx", $0) }.joined()
