@@ -23,6 +23,8 @@ class HomeViewVC: UIViewController
     
     @objc func nextVC(_ sender: Any)
     {
+        animatedScroll.animate(self.view, imageName: "background", animated: true)
+        animatedScroll.alpha = 0.3
     }
     
     override func viewWillAppear(_ animated: Bool)
