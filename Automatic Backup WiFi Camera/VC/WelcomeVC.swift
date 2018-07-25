@@ -27,9 +27,24 @@ class WelcomeVC: UIViewController
     override func viewWillAppear(_ animated: Bool)
     {
         AppUtility.lockOrientation(.portrait)
-        animatedScroll.animate(self.view, imageName: "background", animated: true)
-        animatedScroll.alpha = 0.3
-        cardView.addTarget(self, action: #selector(nextVC(_:)), for: .touchUpInside)
+        prepareViews()
+        addTestProp()
+    }
+    
+    func prepareViews()
+    {
+        self.animatedScroll.animate(self.view, imageName: "background", animated: true)
+        self.animatedScroll.alpha = 0.3
+        self.cardView.addTarget(self, action: #selector(self.nextVC(_:)), for: .touchUpInside)
+    }
+    
+    func addTestProp()
+    {
+        self.btnSuccess.isAccessibilityElement = true
+        self.btnSuccess.accessibilityLabel = "btn"
+//        if(ProcessInfo.processInfo.environment["UITEST_DISABLE_ANIMATIONS"]=="YES")
+//        {
+//        }
     }
     
     //MARK:- Move to next view

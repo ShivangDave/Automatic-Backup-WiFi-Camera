@@ -137,6 +137,7 @@
                     <navigationItem key="navigationItem" id="bO0-We-5BA"/>
                     <connections>
                         <outlet property="animatedScroll" destination="sSN-sp-mFZ" id="GgR-Zy-gXO"/>
+                        <outlet property="btnNext" destination="I8O-ju-s4w" id="Yge-cZ-xYB"/>
                         <outlet property="cardBackView" destination="4mZ-0S-nzb" id="GTx-SR-qJr"/>
                         <outlet property="cardView" destination="L7K-sL-tP4" id="FDB-tk-tlm"/>
                         <outlet property="imgView" destination="7Ox-ed-2h4" id="2KH-Pt-f4L"/>
@@ -480,6 +481,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSv-GT-uqs" customClass="roundButton" customModule="Automatic_Backup_WiFi_Camera" customModuleProvider="target">
                                         <rect key="frame" x="155.5" y="519" width="64" height="64"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="FirstButton" label="FirstButton"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="3Y4-Lk-S4r"/>
                                             <constraint firstAttribute="width" constant="64" id="DJP-29-w9M"/>

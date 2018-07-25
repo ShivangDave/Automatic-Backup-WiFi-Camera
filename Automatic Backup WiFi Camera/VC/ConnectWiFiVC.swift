@@ -34,16 +34,28 @@ class ConnectWiFiVC: UIViewController
     override func viewWillAppear(_ animated: Bool)
     {
         AppUtility.lockOrientation(.portrait)
-        animatedScroll.animate(self.view, imageName: "background", animated: true)
-        animatedScroll.alpha = 0.3
-        cardView.addTarget(self, action: #selector(nextVC(_:)), for: .touchUpInside)
-        changeBar("CONNECT TO WiFi")
+        prepareView()
         showButton()
+        addTestProp()
     }
     
     override func viewDidAppear(_ animated: Bool)
     {
         _ = connectWifi()
+    }
+    
+    func prepareView()
+    {
+        animatedScroll.animate(self.view, imageName: "background", animated: true)
+        animatedScroll.alpha = 0.3
+        cardView.addTarget(self, action: #selector(nextVC(_:)), for: .touchUpInside)
+        changeBar("CONNECT TO WiFi")
+    }
+    
+    func addTestProp()
+    {
+        self.btnNext.isAccessibilityElement = true
+        self.btnNext.accessibilityLabel = "btn1"
     }
     
     //MARK:- Move to the next VC
@@ -135,7 +147,7 @@ class ConnectWiFiVC: UIViewController
         }
     }
     
-    //MARK:- Unhide button with animation
+    //MARK:- Hide/Unhide button with animation
     func showButton()
     {
         if !connect

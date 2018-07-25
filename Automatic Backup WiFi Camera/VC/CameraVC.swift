@@ -17,6 +17,8 @@ class CameraVC: UIViewController
     @IBOutlet weak var cardBackView : cardView!
     @IBOutlet weak var cardView : cardView!
     @IBOutlet weak var imgView : UIImageView!
+    @IBOutlet weak var btnNext : roundButton!
+    
     
     let url = NSURL(string: API_URL.start)
     var streamingController : MjpegStreamingController?
@@ -30,14 +32,24 @@ class CameraVC: UIViewController
     override func viewWillAppear(_ animated: Bool)
     {
         AppUtility.lockOrientation(.portrait)
-        
+        setupView()
+        addTestProp()
+        streamingController = MjpegStreamingController(imageView: imgView)
+        streamingController!.play(url: url! as URL)
+    }
+    
+    func setupView()
+    {
         animatedScroll.animate(self.view, imageName: "background", animated: true)
         animatedScroll.alpha = 0.3
         cardView.addTarget(self, action: #selector(nextVC(_:)), for: .touchUpInside)
         changeBar("CAMERA TEST")
-        
-        streamingController = MjpegStreamingController(imageView: imgView)
-        streamingController!.play(url: url! as URL)
+    }
+    
+    func addTestProp()
+    {
+        self.btnNext.isAccessibilityElement = true
+        self.btnNext.accessibilityLabel = "btn2"
     }
     
     override func viewWillDisappear(_ animated: Bool)

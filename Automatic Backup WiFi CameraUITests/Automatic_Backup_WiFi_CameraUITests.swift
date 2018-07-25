@@ -9,27 +9,40 @@
 import XCTest
 @testable import Automatic_Backup_WiFi_Camera
 
-class Automatic_Backup_WiFi_CameraUITests: XCTestCase {
-    
+class Automatic_Backup_WiFi_CameraUITests: XCTestCase
+{
     var app: XCUIApplication!
-    override func setUp() {
+    
+    override func setUp()
+    {
         super.setUp()
-        
         continueAfterFailure = false
         app = XCUIApplication()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app.launchEnvironment = ["UITEST_DISABLE_ANIMATIONS" : "YES"]
+        app.launch()
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown()
+    {
         super.tearDown()
         app = nil
     }
     
     func testExample()
     {
+        let sp = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        let allow = sp.buttons["Allow"]
+        if allow.exists
+        {
+            allow.tap()
+        }
+        app.buttons["btn"].tap()
+        XCTAssert(app.navigationBars["CONNECT TO WiFi"].exists)
         
+        app.buttons["btn1"].tap()
+        XCTAssert(app.navigationBars["CAMERA TEST"].exists)
+        
+        app.buttons["btn2"].tap()
+        XCTAssertTrue(app.navigationBars["HOME"].exists)
     }
-    
 }
