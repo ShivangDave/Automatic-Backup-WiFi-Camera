@@ -42,9 +42,4 @@ class HomeViewVC: UIViewController
             lblDate.text = "Analytics not available!"
         }
     }
-    
-    //MARK:- Reload background animator
-    @objc func nextVC(_ sender: Any)
-    {
-    }
 }
