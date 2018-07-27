@@ -29,7 +29,7 @@ class Automatic_Backup_WiFi_CameraUITests: XCTestCase
         app = nil
     }
     
-    func testExample()
+    func testNavigation()
     {
         let sp = XCUIApplication(bundleIdentifier: "com.apple.springboard")
         let allow = sp.buttons["Allow"]
