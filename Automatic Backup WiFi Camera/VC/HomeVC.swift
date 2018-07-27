@@ -16,6 +16,7 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
     @IBOutlet weak var navBar : tabbar!
     @IBOutlet weak var videoButton : roundButtonHome!
     @IBOutlet weak var containerView : UIView!
+    
     var currentVC : UIViewController?
 
     //MARK:- UIView methods
@@ -35,7 +36,6 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
     {
         AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         setupView()
-        
         if nLaunch
         {
             streamSetup()

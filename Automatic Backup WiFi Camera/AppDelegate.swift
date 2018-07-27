@@ -11,19 +11,21 @@ import UserNotifications
 
 var lastNote : [String : AnyObject]?
 var nLaunch = false
+let defaults = UserDefaults.standard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let defaults = UserDefaults.standard
     var token : String?
     var orientationLock = UIInterfaceOrientationMask.all
+    var lastDate : String?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
         //MARK:- Store and access token
         token = defaults.object(forKey:"token") as? String
+        lastDate = defaults.string(forKey: "lastDate")
         
         //MARK:- Reset badge count on launch
         UIApplication.shared.applicationIconBadgeNumber = 0

@@ -802,6 +802,7 @@ MM/DD/YYYY @ 11:11 PM</string>
                         <outlet property="animatedScroll" destination="Ozi-lh-2hS" id="GtR-u6-m27"/>
                         <outlet property="cardBackView" destination="W3A-uW-4p9" id="P3G-P8-UDd"/>
                         <outlet property="cardView" destination="UVp-Mi-yUK" id="FGJ-ZZ-Xzt"/>
+                        <outlet property="lblDate" destination="MoR-xF-lGZ" id="enP-n9-dyK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8K-OH-ko6" sceneMemberID="firstResponder"/>

@@ -33,12 +33,29 @@ class StreamVC: UIViewController {
         self.navigationItem.title = "STREAM"
         setAlert()
         play(imgView)
+        setDate()
     }
     
     override func viewWillDisappear(_ animated: Bool)
     {
         nLaunch = false
         streamingController!.stop()
+    }
+    
+    func setDate()
+    {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.timeStyle = .medium
+        dateFormatter.dateStyle = .long
+        let str = dateFormatter.string(from: date)
+        
+        DispatchQueue.main.async{
+            appDelegate.lastDate = str
+            defaults.set(appDelegate.lastDate, forKey: "lastDate")
+            defaults.synchronize()
+        }
     }
     
     //MARK:- stop stream via remote notification
