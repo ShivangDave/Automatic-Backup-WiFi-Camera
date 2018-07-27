@@ -18,7 +18,8 @@ class Automatic_Backup_WiFi_CameraUITests: XCTestCase
         super.setUp()
         continueAfterFailure = false
         app = XCUIApplication()
-        app.launchEnvironment = ["UITEST_DISABLE_ANIMATIONS" : "YES"]
+        app.launchArguments.append("--uitesting")
+//        app.launchEnvironment = ["UITEST_DISABLE_ANIMATIONS" : "YES"]
         app.launch()
     }
     

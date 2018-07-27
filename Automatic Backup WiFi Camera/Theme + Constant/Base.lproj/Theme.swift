@@ -11,6 +11,33 @@ import UIKit
 import MaterialComponents.MaterialCards
 import MaterialComponents.MDCMultilineTextField
 import AnimatedScrollView
+import Alamofire
+
+//MARK:- Test classes
+class testAlamo
+{
+    var result = true
+    func testIt()->Bool
+    {
+        let data = ["token":"token"]
+        
+        Alamofire.request("http://localhost:3000/connect", method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: []) { (res) in
+            switch res.result
+            {
+                case .success(let json):
+                    let dic = json as! NSDictionary
+                    let code = dic.value(forKey: "response") as! String
+                    self.result = true
+                    print(code)
+                
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    self.result = false
+            }
+        }
+        return result
+    }
+}
 
 //MARK:- Floating textfield custom class
 class floatText: MDCMultilineTextField
