@@ -32,13 +32,15 @@ class ConnectWiFiVC: UIViewController
     {
         AppUtility.lockOrientation(.portrait)
         prepareView()
-        showButton()
         addTestProp()
+        
+        btnNext.isHidden = true
+        self.bottomConst.priority = UILayoutPriority.init(1.0)
     }
     
     override func viewDidAppear(_ animated: Bool)
     {
-        connectWifi()
+        showButton()
     }
     
     func prepareView()
@@ -63,15 +65,6 @@ class ConnectWiFiVC: UIViewController
         vc.modalPresentationStyle = .custom
         vc.transitioningDelegate = transitionController
         present(vc, animated: true)
-    }
-    
-    //MARK:- Connect to WiFi
-    func connectWifi()
-    {
-        startAnimating(activityIndicator)
-        self.showButton()
-        self.showSnack("Success")
-        self.stopAnimating(activityIndicator)
     }
     
     //MARK:- CardView method / Retry connection if not connected.
