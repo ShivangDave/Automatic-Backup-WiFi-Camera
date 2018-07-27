@@ -9,6 +9,7 @@
 import UIKit
 import MaterialComponents.MaterialBottomNavigation
 import Alamofire
+import NetworkExtension
 
 class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
 {
@@ -159,6 +160,7 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
             #if arch(i386) || arch(x86_64)
             pushIt("StreamVC")
             #endif
+            _ = connectWifi()
         }
     }
     
@@ -206,6 +208,56 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
             default:
                 break
         }
+    }
+    
+    //MARK:- Connect to WiFi
+    func connectWifi()->Bool
+    {
+        var bool = false
+        let ssid = "Automatic Backup WiFi Camera"
+        let password = "ChangeMe"
+        
+        //MARK:- Only run this code if its not a simulator
+        #if !arch(i386) && !arch(x86_64)
+        let config = NEHotspotConfiguration(ssid: ssid, passphrase: password, isWEP: false)
+        
+        startAnimating(activityIndicator)
+        
+        NEHotspotConfigurationManager.shared.apply(config) { (error) in
+            if error != nil
+            {
+                let desc = error?.localizedDescription.capitalized
+                self.showSnack(desc ?? "")
+                if desc == "Already Associated."
+                {
+                    bool = true
+                    self.pushIt("StreamVC")
+                }
+                else
+                {
+                    bool = false
+                    self.showSnack("Cannot find WiFi network!")
+                }
+                self.stopAnimating(activityIndicator)
+            }
+            else
+            {
+                if self.currentSSIDs().first == ssid
+                {
+                    bool = true
+                    self.pushIt("StreamVC")
+                }
+                else
+                {
+                    self.showSnack("Couldn't find WiFi Network")
+                    bool = false
+                }
+                self.stopAnimating(activityIndicator)
+            }
+            
+        }
+        #endif
+        return bool
     }
     
     //MARK:- set view size inside container view
