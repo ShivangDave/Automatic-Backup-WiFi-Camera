@@ -19,8 +19,6 @@ class CameraVC: UIViewController
     @IBOutlet weak var imgView : UIImageView!
     @IBOutlet weak var btnNext : roundButton!
     
-    
-    let url = NSURL(string: API_URL.start)
     var streamingController : MjpegStreamingController?
     
     //MARK:- UIView methods
@@ -34,8 +32,6 @@ class CameraVC: UIViewController
         AppUtility.lockOrientation(.portrait)
         setupView()
         addTestProp()
-        streamingController = MjpegStreamingController(imageView: imgView)
-        streamingController!.play(url: url! as URL)
     }
     
     func setupView()
@@ -54,7 +50,6 @@ class CameraVC: UIViewController
     
     override func viewWillDisappear(_ animated: Bool)
     {
-        streamingController!.stop()
     }
     
     //MARK:- Move to next VC

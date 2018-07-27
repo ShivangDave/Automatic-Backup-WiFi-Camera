@@ -8,16 +8,14 @@
 
 import UIKit
 
-class StreamVC: UIViewController {
-
+class StreamVC: UIViewController
+{
     //MARK:- Outlets
     @IBOutlet weak var imgView : UIImageView!
     @IBOutlet weak var alertView : UIView!
     @IBOutlet weak var alertLabel : UILabel!
     @IBOutlet weak var btnRotate : UIButton!
 
-    let url = NSURL(string: API_URL.start)
-    var streamingController : MjpegStreamingController?
     var fullScreen = false
     var oldFrame: CGRect?
     
@@ -32,14 +30,7 @@ class StreamVC: UIViewController {
         AppUtility.lockOrientation(.all, andRotateTo: .landscapeRight)
         self.navigationItem.title = "STREAM"
         setAlert()
-        play(imgView)
         setDate()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool)
-    {
-        nLaunch = false
-        streamingController!.stop()
     }
     
     func setDate()
@@ -51,20 +42,12 @@ class StreamVC: UIViewController {
         dateFormatter.dateStyle = .long
         let str = dateFormatter.string(from: date)
         
-        DispatchQueue.main.async{
+        DispatchQueue.main.async
+        {
             appDelegate.lastDate = str
             defaults.set(appDelegate.lastDate, forKey: "lastDate")
             defaults.synchronize()
         }
-    }
-    
-    //MARK:- stop stream via remote notification
-    @objc func stopStream(_ notification:Notification)
-    {
-        streamingController!.stop()
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.popToRootViewController(animated: true)
-        self.showSnack("Stream Finished!")
     }
     
     //MARK:- Show alert if device is in not in landscape orientation
@@ -111,14 +94,6 @@ class StreamVC: UIViewController {
         {
             setAlert()
         }
-    }
-    
-    //MARK:- Play function
-    func play(_ imgView : UIImageView)
-    {
-        NotificationCenter.default.addObserver(self, selector: #selector(stopStream(_:)), name: .stopStream, object: nil)
-        streamingController = MjpegStreamingController(imageView: imgView)
-        streamingController!.play(url: url! as URL)
     }
     
     //MARK:- Gesture recognizer for UIImageView Full screen

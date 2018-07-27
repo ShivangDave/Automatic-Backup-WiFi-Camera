@@ -8,8 +8,6 @@
 
 import UIKit
 import MaterialComponents.MaterialBottomNavigation
-import Alamofire
-import NetworkExtension
 
 class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
 {
@@ -37,11 +35,8 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
     {
         AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         setupView()
-        if nLaunch
-        {
-            streamSetup()
-        }
-        checkToken()
+        showSnack("No active stream found!")
+        addTestProp()
     }
     
     func setupView()
@@ -49,7 +44,6 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         self.navigationItem.backBarButtonItem?.tintColor = .white
         currentVC = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewVC")
         setVC(currentVC!,0)
-        NotificationCenter.default.addObserver(self, selector: #selector(startStream(_:)), name: .startStream, object: nil)
     }
     
     func addTestProp()
@@ -58,110 +52,11 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
         self.videoButton.accessibilityLabel = "btn3"
     }
     
-    //MARK:- Start stream function call via notification
-    @objc func startStream(_ notification:Notification)
-    {
-        showAlert()
-    }
-    
-    //MARK:- send token if its not on the server
-    func sendReq()
-    {
-        let data = ["token":appDelegate.token!]
-        
-        Alamofire.request(API_URL.token, method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: []) { (res) in
-            switch res.result
-            {
-                case .success(let json):
-                    let dic = json as! NSDictionary
-                    print(dic)
-                
-                case .failure(let error):
-                    print(error.localizedDescription)
-            }
-        }
-    }
-    
-    //MARK:- check for stored token on the server
-    func checkToken()
-    {
-        Alamofire.request(API_URL.checkToken)
-            .responseJSON { response in
-                guard response.result.error == nil else {
-                    print(response.result.error!)
-                    return
-                }
-                guard let json = response.result.value as? [String: Any] else {
-                    if let error = response.result.error {
-                        print("Error: \(error)")
-                    }
-                    return
-                }
-                guard let todoTitle = json["token"] as? Bool else
-                {
-                    print("Could not get todo title from JSON")
-                    return
-                }
-                if !todoTitle
-                {
-                    self.sendReq()
-                }
-            }
-    }
-    
-    //MARK:- check for last received notification type
-    func streamSetup()
-    {
-        if let noti = lastNote
-        {
-            let cat = noti["category"] as! Int
-            
-            switch cat
-            {
-                case 0:
-                    showAlert()
-                    break
-                case 1:
-                    showSnack("No active stream found!")
-                    break
-                default:
-                    break
-            }
-        }
-    }
-    
-    //MARK:- Ask for user permission to launch the stream
-    func showAlert()
-    {
-        let alert = UIAlertController(title: "Confirm", message: "Do you want to start the video?", preferredStyle: .alert)
-        let yes = UIAlertAction(title: "Yes", style: .default) { (action) in
-            let vc = mainStoryboard.instantiateViewController(withIdentifier: "StreamVC") as! StreamVC
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        let no = UIAlertAction(title: "No", style: .cancel) { (action) in
-            alert.dismiss(animated: true, completion: {
-                self.showSnack("Stream cancelled!")
-            })
-        }
-        alert.addAction(yes)
-        alert.addAction(no)
-        self.present(alert, animated: true, completion: nil)
-    }
     
     //MARK:- Launch camera stream manually
     @IBAction func cameraClicked(_ sender : Any)
     {
-        if self.currentSSIDs().first == "Automatic Backup WiFi Camera"
-        {
-            pushIt("StreamVC")
-        }
-        else
-        {
-            #if arch(i386) || arch(x86_64)
-            pushIt("StreamVC")
-            #endif
-            _ = connectWifi()
-        }
+        pushIt("StreamVC")
     }
     
     //MARK:- Tabbar delegate
@@ -208,56 +103,6 @@ class HomeVC: UIViewController, MDCBottomNavigationBarDelegate
             default:
                 break
         }
-    }
-    
-    //MARK:- Connect to WiFi
-    func connectWifi()->Bool
-    {
-        var bool = false
-        let ssid = "Automatic Backup WiFi Camera"
-        let password = "ChangeMe"
-        
-        //MARK:- Only run this code if its not a simulator
-        #if !arch(i386) && !arch(x86_64)
-        let config = NEHotspotConfiguration(ssid: ssid, passphrase: password, isWEP: false)
-        
-        startAnimating(activityIndicator)
-        
-        NEHotspotConfigurationManager.shared.apply(config) { (error) in
-            if error != nil
-            {
-                let desc = error?.localizedDescription.capitalized
-                self.showSnack(desc ?? "")
-                if desc == "Already Associated."
-                {
-                    bool = true
-                    self.pushIt("StreamVC")
-                }
-                else
-                {
-                    bool = false
-                    self.showSnack("Cannot find WiFi network!")
-                }
-                self.stopAnimating(activityIndicator)
-            }
-            else
-            {
-                if self.currentSSIDs().first == ssid
-                {
-                    bool = true
-                    self.pushIt("StreamVC")
-                }
-                else
-                {
-                    self.showSnack("Couldn't find WiFi Network")
-                    bool = false
-                }
-                self.stopAnimating(activityIndicator)
-            }
-            
-        }
-        #endif
-        return bool
     }
     
     //MARK:- set view size inside container view

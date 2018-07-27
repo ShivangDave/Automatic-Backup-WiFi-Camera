@@ -8,8 +8,6 @@
 
 import UIKit
 import AnimatedScrollView
-import NetworkExtension
-import Alamofire
 import MaterialComponents.MaterialMaskedTransition
 
 class ConnectWiFiVC: UIViewController
@@ -22,7 +20,6 @@ class ConnectWiFiVC: UIViewController
     @IBOutlet weak var bottomConst: NSLayoutConstraint!
     @IBOutlet weak var lblItalic: italicLabel!
     
-    var connect = false
     var registered = false
     
     //MARK:- UIView methods
@@ -41,7 +38,7 @@ class ConnectWiFiVC: UIViewController
     
     override func viewDidAppear(_ animated: Bool)
     {
-        _ = connectWifi()
+        connectWifi()
     }
     
     func prepareView()
@@ -69,68 +66,17 @@ class ConnectWiFiVC: UIViewController
     }
     
     //MARK:- Connect to WiFi
-    func connectWifi()->Bool
+    func connectWifi()
     {
-        let ssid = "Automatic Backup WiFi Camera"
-        let password = "ChangeMe"
-        
-        //MARK:- Only run this code if its not a simulator
-        #if !arch(i386) && !arch(x86_64)
-        let config = NEHotspotConfiguration(ssid: ssid, passphrase: password, isWEP: false)
-        
         startAnimating(activityIndicator)
-        
-        NEHotspotConfigurationManager.shared.apply(config) { (error) in
-            if error != nil
-            {
-                let desc = error?.localizedDescription.capitalized
-                self.showSnack(desc ?? "")
-                if desc == "Already Associated."
-                {
-                    self.connect = true
-                    self.showButton()
-                }
-                else
-                {
-                    self.connect = false
-                }
-                
-                self.stopAnimating(activityIndicator)
-            }
-            else
-            {
-                if self.currentSSIDs().first == ssid
-                {
-                    self.showSnack("Success")
-                    self.connect = true
-                    self.showButton()
-                }
-                else
-                {
-                    self.showSnack("Couldn't find WiFi Network")
-                    self.connect = false
-                }
-                self.stopAnimating(activityIndicator)
-            }
-            
-        }
-        #endif
-        return self.connect
+        self.showButton()
+        self.showSnack("Success")
+        self.stopAnimating(activityIndicator)
     }
     
     //MARK:- CardView method / Retry connection if not connected.
     @objc func nextVC(_ sender: Any)
     {
-        if connect && registered
-        {
-            cardView.isUserInteractionEnabled = false
-            lblItalic.text = "Tap next to continue."
-            showSnack("Tap next to continue.")
-        }
-        else
-        {
-            _ = connectWifi()
-        }
     }
     
     //MARK:- Button animation constraint changes
@@ -151,9 +97,7 @@ class ConnectWiFiVC: UIViewController
     func showButton()
     {
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (_) in
-            #if !arch(i386) && !arch(x86_64)
             self.buttonAnimation()
-            #endif
         }
     }
 }
