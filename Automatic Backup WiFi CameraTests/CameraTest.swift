@@ -28,8 +28,6 @@ class CameraTest: XCTestCase
     {
         let x = testToken.testIt()
         XCTAssert(x == true)
-        
-        
     }
 
     func testPerformanceExample()
