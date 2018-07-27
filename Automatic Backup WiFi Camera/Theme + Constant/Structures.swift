@@ -28,17 +28,6 @@ struct AppUtility
     }
 }
 
-//MARK:- Structure for API URL(s)
-struct API_URL
-{
-    static let baseurl = "http://10.3.141.1:3000/"
-    static let token = baseurl + "connect"
-    static let start = baseurl + "start"
-    static let stop = baseurl + "stop"
-    static let getTotalClients = baseurl + "totalClients"
-    static let checkToken = baseurl + "checkToken"
-}
-
 //MARK:- Flip the theme, changes primary color to accent
 struct FlipTheme
 {

@@ -150,47 +150,10 @@ class ConnectWiFiVC: UIViewController
     //MARK:- Hide/Unhide button with animation
     func showButton()
     {
-        if !connect
-        {
-            self.btnNext.isHidden = true
-            self.bottomConst.priority = UILayoutPriority.init(1.0)
-            
-            #if arch(i386) || arch(x86_64)
-                buttonAnimation()
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (_) in
+            #if !arch(i386) && !arch(x86_64)
+            self.buttonAnimation()
             #endif
-        }
-        else
-        {
-            Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (_) in
-                #if !arch(i386) && !arch(x86_64)
-                self.sendReq()
-                #endif
-            }
-        }
-    }
-    
-    //MARK:- Send token API call
-    func sendReq()
-    {
-        let data = ["token":appDelegate.token!]
-        startAnimating(activityIndicator)
-        Alamofire.request(API_URL.token, method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.main, options: []) { (res) in
-            switch res.result
-            {
-                case .success(let json):
-                    let dic = json as! NSDictionary
-                    let code = dic.value(forKey: "response") as! String
-                    print(code)
-                    self.registered = true
-                    self.buttonAnimation()
-                    self.stopAnimating(activityIndicator)
-                
-                case .failure(let error):
-                    self.registered = false
-                    print(error.localizedDescription)
-                    self.stopAnimating(activityIndicator)
-                    self.sendReq()
-            }
         }
     }
 }

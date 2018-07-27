@@ -9,8 +9,6 @@
 import UIKit
 import UserNotifications
 
-var lastNote : [String : AnyObject]?
-var nLaunch = false
 let defaults = UserDefaults.standard
 
 @UIApplicationMain
@@ -23,40 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
-        //MARK:- Store and access token
-        token = defaults.object(forKey:"token") as? String
-        lastDate = defaults.string(forKey: "lastDate")
-        
-        //MARK:- Reset badge count on launch
-        UIApplication.shared.applicationIconBadgeNumber = 0
-        
-        //MARK:- Check for launch options
-        if launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil
-        {
-            if let remoteNotification = launchOptions?[.remoteNotification] as?  [AnyHashable : Any]
-            {
-                lastNote = remoteNotification["aps"] as? [String:AnyObject]
-                let vc = mainStoryboard.instantiateViewController(withIdentifier: "navigationController")
-                self.window?.rootViewController = vc
-                nLaunch = true
-            }
-        }
-        else
-        {
-            if token != nil
-            {
-                nLaunch = false
-                print(token ?? "")
-                let vc = mainStoryboard.instantiateViewController(withIdentifier: "navigationController")
-                self.window?.rootViewController = vc
-            }
-            else
-            {
-                nLaunch = false
-                UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
-                application.registerForRemoteNotifications()
-            }
-        }
+        UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
+        application.registerForRemoteNotifications()
         
         return true
     }
@@ -79,20 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void)
     {
         let aps = userInfo["aps"] as! [String : AnyObject]
-        if let cat = aps["category"] as? Int
-        {
-            switch cat
-            {
-                case 0:
-                    NotificationCenter.default.post(name: .startStream, object: nil)
-                    break
-                case 1:
-                    NotificationCenter.default.post(name: .stopStream, object: nil)
-                    break
-                default:
-                    break
-            }
-        }
+        print(aps)
     }
     
     //MARK:- Unused App States
