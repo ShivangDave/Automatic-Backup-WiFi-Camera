@@ -42,9 +42,6 @@ class WelcomeVC: UIViewController
     {
         self.btnSuccess.isAccessibilityElement = true
         self.btnSuccess.accessibilityLabel = "btn"
-//        if(ProcessInfo.processInfo.environment["UITEST_DISABLE_ANIMATIONS"]=="YES")
-//        {
-//        }
     }
     
     //MARK:- Move to next view
