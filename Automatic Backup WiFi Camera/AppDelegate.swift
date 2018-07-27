@@ -40,7 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.rootViewController = vc
                 nLaunch = true
             }
-
         }
         else
         {
