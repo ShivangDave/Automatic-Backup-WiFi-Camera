@@ -28,7 +28,6 @@ class HomeViewVC: UIViewController
     {
         animatedScroll.animate(self.view, imageName: "background", animated: true)
         animatedScroll.alpha = 0.3
-        cardView.addTarget(self, action: #selector(nextVC(_:)), for: .touchUpInside)
     }
     
     func setDate()
