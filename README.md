@@ -7,7 +7,7 @@
   <img src="/Screenshots/5.PNG" width="240" height="500">
   <img src="/Screenshots/6.PNG" width="240" height="500">
   <img src="/Screenshots/7.PNG" width="240" height="500">
-  <img src="/Screenshots/8.PNG" width="240" height="500">
+  <img src="/Screenshots/8.PNG" width="500" height="240">
   <img src="/Screenshots/9.PNG" width="240" height="500">
   <img src="/Screenshots/10.PNG" width="240" height="500">
   <img src="/Screenshots/11.PNG" width="240" height="500">
