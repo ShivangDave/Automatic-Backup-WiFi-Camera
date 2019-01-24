@@ -1,8 +1,8 @@
 # Automatic-Backup-WiFi-Camera
 <p align="center">
-  <img src="/Screenshots/1.PNG" width="350" height="750">
-  <img src="/Screenshots/2.PNG" width="350" height="750">
-  <img src="/Screenshots/3.PNG" width="350" height="750">
+  <img src="/Screenshots/1.PNG" width="350" height="500">
+  <img src="/Screenshots/2.PNG" width="350" height="500">
+  <img src="/Screenshots/3.PNG" width="350" height="500">
   <img src="/Screenshots/4.PNG" width="350" height="750">
   <img src="/Screenshots/5.PNG" width="350" height="750">
   <img src="/Screenshots/6.PNG" width="350" height="750">
